@@ -252,7 +252,7 @@ Agenda
       },
       events: [
         {
-          title: 'Hari Jadi Desa',
+          title: 'Hari Jadi Kampung',
           start: '2022-04-08',
           end: '2022-04-09'
         },
@@ -262,7 +262,7 @@ Agenda
           start: '2022-04-09T16:00:00'
         },
         {
-          title: 'Rapat Kerja Desa',
+          title: 'Rapat Kerja Kampung',
           start: '2022-04-11',
           end: '2022-04-13'
         },
@@ -280,7 +280,7 @@ Agenda
           start: '2022-04-12T14:30:00'
         },
         {
-          title: 'Lomba Desa',
+          title: 'Lomba Kampung',
           start: '2022-04-13T07:00:00'
         },
         {

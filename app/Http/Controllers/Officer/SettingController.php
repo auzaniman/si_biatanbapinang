@@ -26,8 +26,8 @@ class SettingController extends Controller
     $profiledesa->save();
 
     return redirect()->back()->with([
-      'message' => 'Profile Desa berhasil Ditambahkan',
-      'status' => 'Profile Desa berhasil Ditambahkan'
+      'message' => 'Profile Kampung berhasil Ditambahkan',
+      'status' => 'Profile Kampung berhasil Ditambahkan'
     ]);
   }
 
@@ -42,8 +42,8 @@ class SettingController extends Controller
     $profiledesa->save();
 
     return redirect()->back()->with([
-      'message' => 'Profile Desa berhasil Diubah',
-      'status' => 'Profile Desa berhasil Diubah'
+      'message' => 'Profile Kampung berhasil Diubah',
+      'status' => 'Profile Kampung berhasil Diubah'
     ]);
   }
 

@@ -110,7 +110,7 @@ Layanan
         <div class="row align-items-lg-center">
           <div class="col-md-12">
             <div class="numbers">
-              <a href="{{route('officer.supengdesa')}}" class="text-sm mb-0 text-uppercase font-weight-bold" style="letter-spacing: 0px">Surat Pengantar Desa</a> <span class="text-sm mb-0 text-uppercase font-weight-bold">({{$supengdesa}})</span>
+              <a href="{{route('officer.supengdesa')}}" class="text-sm mb-0 text-uppercase font-weight-bold" style="letter-spacing: 0px">Surat Pengantar Kampung</a> <span class="text-sm mb-0 text-uppercase font-weight-bold">({{$supengdesa}})</span>
             </div>
             <p class="mb-0">
               <span class="text-success text-sm font-weight-bolder me-1">{{$verifikasi_supengdesa}}</span>

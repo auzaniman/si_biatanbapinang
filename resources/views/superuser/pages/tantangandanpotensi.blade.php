@@ -9,7 +9,7 @@ Potensi Tantangan
   <div class="col-lg-12 mb-lg-0 mb-4">
     <div class="card h-100">
       <div class="card-header bg-transparent p-0 mx-4 mt-3">
-        <h6 class="text-uppercase font-weight-bold">Tantangan dan Potensi Kampung Biatan Lempake</h6>
+        <h6 class="text-uppercase font-weight-bold">Tantangan dan Potensi Kampung Biatan Bapinang</h6>
       </div>
       <div class="card-body py-0">
         <div class="table-responsive">

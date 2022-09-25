@@ -1,10 +1,10 @@
-<div class="section features-6 pb-2" id="biatanlempake">
+<div class="section features-6 pb-2" id="biatanbapinang">
   <div class="container">
     <div class="row mb-4">
       <div class="col-md-8 mx-auto text-center">
         <span class="badge badge-custom badge-pill mb-3 font-weight-bold text-white" style="font-size: 16px">Tentang Kami</span>
-        <h3 class="display-3">Biatan Lempake</h3>
-        <p class="lead mb-5">Kampung Biatan Lempake adalah salah satu kampung di Kecamatan Biatan Kabupaten Berau yang berupaya memberikan pelayanan terbaik bagi masyarakat serta berupaya meningkatkan kesejahteraan masyarakat dengan pengelolaan berbagai potensi yang dimiliki dan terus berkembang menjadi kampung mandiri.</p>
+        <h3 class="display-3">Biatan Bapinang</h3>
+        <p class="lead mb-5">Kampung Biatan Bapinang adalah salah satu kampung di Kecamatan Biatan Kabupaten Berau yang berupaya memberikan pelayanan terbaik bagi masyarakat serta berupaya meningkatkan kesejahteraan masyarakat dengan pengelolaan berbagai potensi yang dimiliki dan terus berkembang menjadi kampung mandiri.</p>
       </div>
     </div>
 

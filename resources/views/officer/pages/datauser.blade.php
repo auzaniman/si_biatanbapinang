@@ -9,7 +9,7 @@ Data User
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <p class="text-uppercase">Data User Kampung Biatan Lempake</p>
+        <p class="text-uppercase">Data User Kampung Biatan Bapinang</p>
         <div class="table-responsive">
           <table class="table align-items-center mb-3">
             <thead>

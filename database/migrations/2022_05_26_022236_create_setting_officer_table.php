@@ -16,7 +16,7 @@ class CreateSettingOfficerTable extends Migration
         Schema::create('setting_officer', function (Blueprint $table) {
             $table->id();
 
-            // Profile Desa
+            // Profile Kampung
             $table->text('img_desa')->nullable();
             $table->text('sejarah_kampung')->nullable();
             $table->string('video_desa')->nullable();

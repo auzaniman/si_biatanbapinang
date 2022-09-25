@@ -1,7 +1,7 @@
 @extends('superuser.layouts.app')
 
 @section('title')
-Surat Pengantar Desa
+Surat Pengantar Kampung
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@ Surat Pengantar Desa
           <div class="col-auto my-auto">
             <div class="h-100">
               <h5 class="mb-1">
-                Syarat Pembuatan Surat Pengantar Desa
+                Syarat Pembuatan Surat Pengantar Kampung
               </h5>
               <p class="mb-0 font-weight-bold text-sm">
                 Fotokopi KTP
@@ -31,14 +31,14 @@ Surat Pengantar Desa
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <p class="text-uppercase text-sm">Formulir Pembuatan Surat Pengantar Desa</p>
+        <p class="text-uppercase text-sm">Formulir Pembuatan Surat Pengantar Kampung</p>
         <form method="POST" action="{{route('supengdesa_post')}}" enctype="multipart/form-data">
           @csrf
           <div class="row" hidden>
             <div class="col-md-12">
               <div class="form-group">
                 <label for="nama_ajuan" class="form-control-label">Nama Ajuan</label>
-                <input name="nama_ajuan" id="nama_ajuan" class="form-control disabled" type="text" value="Surat Pengantar Desa">
+                <input name="nama_ajuan" id="nama_ajuan" class="form-control disabled" type="text" value="Surat Pengantar Kampung">
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 @extends('webgis.layouts.app-member')
 
 @section('title')
-Peta Desa
+Peta Kampung
 @endsection
 
 @section('content')

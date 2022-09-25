@@ -1,7 +1,7 @@
 @extends('officer.layouts.app')
 
 @section('title')
-Peta Desa
+Peta Kampung
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@ Peta Desa
   <div class="col-lg-12 mb-lg-0 mb-4">
     <div class="card h-100">
       <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize">Peta Desa</h6>
+        <h6 class="text-capitalize">Peta Kampung</h6>
         <p class="mb-3">
           Fitur peta kampung ini adalah fitur unggulan dari platform cendikia. Peta kampung ini berbasis web gis dan menampilkan landskap kampung tersebut. Di dalam peta kampung terdapat fitur-fitur yang menampilkan informasi kampung, yaitu penggunaan lahan, kondisi lahan, pekerjaan, status tanah, kepemilikan tanah. Kemudian terdapat fitur informasi lahan, secara teknis ketika salahs atu area di klik, maka muncul pop up informasi mengenai lahan tersebut. Informasi mengenai lahan ini hanya dapat diedit oleh petugas atas ijin pemilik lahan tersebut. Disamping itu terdapat fitur zoom in/out, tangging, dan pengukur jarak. Kedepannya, dalam fitur peta kampung ini, terdapat fitur paint seperti game Warcraft/ rise empie karena fitur ini ditujukan untuk perencanaan pembangunan. Fitur paint tersebut seperti jalan, rumah, gedung kantor, hutan, dsb.
 
@@ -22,7 +22,7 @@ Peta Desa
   <div class="col-lg-12 mb-lg-0 mb-4">
     <div class="card  h-100">
       <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize">Peta Desa</h6>
+        <h6 class="text-capitalize">Peta Kampung</h6>
         <img src="{{url('backend/assets/img/peta.png')}}" class="img-fluid mb-3" alt="gambar peta">
       </div>
     </div>

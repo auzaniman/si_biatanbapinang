@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-6 collapse-brand">
             <a href="">
-              Biatan Lempake{{-- <img src="{{ url ('frontend/argon_theme/assets/img/brand/blue.png')}}"> --}}
+              Biatan Bapinang{{-- <img src="{{ url ('frontend/argon_theme/assets/img/brand/blue.png')}}"> --}}
             </a>
           </div>
           <div class="col-6 collapse-close">
@@ -75,9 +75,9 @@
           </div>
         </li> --}}
         <li class="nav-item">
-          <a href="#biatanlempake" class="nav-link">
+          <a href="#biatanbapinang" class="nav-link">
             <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text font-weight-bold">Biatan Lempake</span>
+            <span class="nav-link-inner--text font-weight-bold">Biatan Bapinang</span>
           </a>
         </li>
         <li class="nav-item">

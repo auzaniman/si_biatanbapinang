@@ -5,7 +5,7 @@
   <div class="card shadow-lg">
     <div class="card-header pb-0 pt-3 ">
       <div class="float-start">
-        <h5 class="mt-3 mb-0">Kampung Biatan Lempake</h5>
+        <h5 class="mt-3 mb-0">Kampung Biatan Bapinang</h5>
         <p>Kampung Terintegrasi</p>
       </div>
       <div class="float-end mt-4">

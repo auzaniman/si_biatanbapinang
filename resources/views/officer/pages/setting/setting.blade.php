@@ -10,7 +10,7 @@ Setting Website
     <div class="card">
       <div class="card-body">
 
-        {{-- Profile Desa --}}
+        {{-- Profile Kampung --}}
         @if ($getdatapropdesa != null)
         <form method="POST" action="{{route('officer.editsetprofiledesa', $getdatapropdesa->id)}}" enctype="multipart/form-data">
           @method('put')

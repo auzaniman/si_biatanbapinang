@@ -22,7 +22,7 @@ Keuangan
     <div class="card ">
       <div class="card-header pb-0">
         <div class="d-flex justify-content-between">
-          <h6 class="mb-2">Pendapatan dan Pengeluaran Desa 2021</h6>
+          <h6 class="mb-2">Pendapatan dan Pengeluaran Kampung 2021</h6>
         </div>
       </div>
       <div class="table-responsive">
@@ -148,7 +148,7 @@ Keuangan
 
             <tr style="border-top: 5px solid #dee2e6">
               <td>
-                <p class="font-weight-bold mb-0 px-3">Sisa Keuangan Desa</p>
+                <p class="font-weight-bold mb-0 px-3">Sisa Keuangan Kampung</p>
               </td>
               <td>
                 <p class="font-weight-bold mb-0">Rp. 100.000.000</p>
@@ -172,7 +172,7 @@ Keuangan
   <div class="col-lg-6 mb-lg-0 mb-4">
     <div class="card  h-100">
       <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Sumber Pendapatan Desa</h6>
+        <h6 class="text-capitalize mb-0">Sumber Pendapatan Kampung</h6>
       </div>
       <div class="card-body p-3">
         <div class="chart">
@@ -184,7 +184,7 @@ Keuangan
   <div class="col-lg-6 mb-lg-0 mb-4">
     <div class="card  h-100">
       <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Pengeluaran Desa</h6>
+        <h6 class="text-capitalize mb-0">Pengeluaran Kampung</h6>
       </div>
       <div class="card-body p-3">
         <div class="chart">
@@ -203,7 +203,7 @@ Keuangan
     type: 'pie',
     data: {
       labels: [
-        'Pendapatan Asli Desa',
+        'Pendapatan Asli Kampung',
         'Bantuan dari Pemerintah Kabupaten',
         'Bantuan dari Pemerintah dan Pemerintah Provinsi',
         'Sumber Pihak ke-3',

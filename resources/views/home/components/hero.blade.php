@@ -35,7 +35,7 @@
       <div class="col px-0">
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-12 text-center pt-lg-4 mt-lg-5">
-            <h1 class="text-white display-1">Selamat datang di laman Kampung Biatan Lempake.</h1>
+            <h1 class="text-white display-1">Selamat datang di laman Kampung Biatan Bapinang.</h1>
             <div class="btn-wrapper mt-4 d-block d-lg-none">
               @guest
               <a href="{{route('login')}}" class="btn btn-warning btn-icon mt-3 mb-sm-0">

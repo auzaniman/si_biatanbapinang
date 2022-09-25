@@ -9,7 +9,7 @@ Detail Pemohon
   <div class="col-md-12">
     <div class="card">
       <div class="card-header pb-0 px-3">
-        <h4 class="mb-0">Detail Pemohon Surat Pengantar Desa</h4>
+        <h4 class="mb-0">Detail Pemohon Surat Pengantar Kampung</h4>
       </div>
       <div class="card-body pt-4 p-3">
         <ul class="list-group">

@@ -13,7 +13,7 @@ Permohonan Waiting
           <div class="col-auto my-auto">
             <div class="h-100">
               <h5 class="mb-1">
-                Data Pemohon Surat Pengantar Desa dalam proses
+                Data Pemohon Surat Pengantar Kampung dalam proses
               </h5>
             </div>
           </div>

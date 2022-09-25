@@ -63,7 +63,7 @@ Layanan
   <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
     <div class="card h-100">
       <div class="card-body p-3">
-        <a href="{{route('supengdesa')}}" class="text-sm mb-0 text-uppercase font-weight-bold" style="letter-spacing: 0px">Surat Pengantar Desa</a>
+        <a href="{{route('supengdesa')}}" class="text-sm mb-0 text-uppercase font-weight-bold" style="letter-spacing: 0px">Surat Pengantar Kampung</a>
       </div>
     </div>
   </div>

@@ -49,7 +49,7 @@ class MainDashboardController extends Controller
       $perizinantoday = PerizinanModel::whereDate('created_at', Carbon::today())->count();
       $nonperizinantoday = NonPerizinanModel::whereDate('created_at', Carbon::today())->count();
 
-      // Menghitung Total Layanan Desa
+      // Menghitung Total Layanan Kampung
       $administrasi_total[] = $administrasi;
       $perizinan_total[] = $perizinan;
       $nonperizinan_total[] = $nonperizinan;

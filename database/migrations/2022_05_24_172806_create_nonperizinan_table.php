@@ -33,7 +33,7 @@ class CreateNonperizinanTable extends Migration
             $table->text('foto_rumah_depan')->nullable();
             $table->text('foto_rumah_samping')->nullable();
             $table->text('tanda_pbb')->nullable();
-            // Surat Pengantar Desa
+            // Surat Pengantar Kampung
             $table->string('keperluan')->nullable();
             $table->string('tanggal_keperluan')->nullable();
             $table->string('tempat_keperluan')->nullable();

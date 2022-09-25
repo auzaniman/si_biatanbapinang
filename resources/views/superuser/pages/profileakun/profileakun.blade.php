@@ -10,8 +10,8 @@ Profil Akun
     <div class="card card-background z-index-0">
       <div class="full-background" style="background-image: url('/frontend/assets/img/1.png')"></div>
       <div class="card-body text-left">
-        <h4 class="text-white">Selamat Datang di Desa Biatan Lempake</h4>
-        <p class=" text-white bold mb-0">Awali harimu dengan senyum. Selamat melakukan aktifitas warga Kampung biatan lempake. Kami melayani sepenuh hati.</p>
+        <h4 class="text-white">Selamat Datang di Kampung Biatan Bapinang</h4>
+        <p class=" text-white bold mb-0">Awali harimu dengan senyum. Selamat melakukan aktifitas warga Kampung biatan bapinang. Kami melayani sepenuh hati.</p>
       </div>
     </div>
   </div>
@@ -206,7 +206,7 @@ Profil Akun
                     </div>
                     <div class="form-group">
                       <div class="input-group input-group-alternative mb-3">
-                        <select class="form-control mx-3 @error('desa_ktp') is-invalid @enderror" id="desa" name="desa_ktp" placeholder="Desa">
+                        <select class="form-control mx-3 @error('desa_ktp') is-invalid @enderror" id="desa" name="desa_ktp" placeholder="Kampung">
 
                         </select>
                         @error('desa_ktp')
@@ -288,7 +288,7 @@ Profil Akun
             </tr>
             <tr>
               <td class="ps-0">
-                <span><strong>Desa</strong><span>
+                <span><strong>Kampung</strong><span>
               </td>
               <td>
                 <span class="text-dark ms-sm-2">:  {{$data->desaktp}}</span>
@@ -368,7 +368,7 @@ Profil Akun
                     </div>
                     <div class="form-group">
                       <div class="input-group input-group-alternative mb-3">
-                        <select class="form-control mx-3 @error('desa_domisili') is-invalid @enderror" id="1desa" name="desa_domisili" placeholder="Desa">
+                        <select class="form-control mx-3 @error('desa_domisili') is-invalid @enderror" id="1desa" name="desa_domisili" placeholder="Kampung">
 
                         </select>
                         @error('desa_domisili')
@@ -462,7 +462,7 @@ Profil Akun
               </tr>
               <tr>
                 <td class="ps-0">
-                  <span><strong>Desa</strong><span>
+                  <span><strong>Kampung</strong><span>
                 </td>
                 <td>
                   @if ($data->desadom = null)
@@ -516,7 +516,7 @@ Profil Akun
               </tr>
               <tr>
                 <td class="ps-0">
-                  <span><strong>Desa</strong><span>
+                  <span><strong>Kampung</strong><span>
                 </td>
                 <td>
                   <span class="text-dark ms-sm-2">:  {{$data->desadom}}</span>

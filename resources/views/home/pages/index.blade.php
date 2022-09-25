@@ -1,7 +1,7 @@
 @extends('home.layouts.app')
 
 @section('title')
-Biatan Lempake
+Biatan Bapinang
 @endsection
 
 @section('content')

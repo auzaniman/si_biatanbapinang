@@ -70,7 +70,7 @@ class ProfileAkunController extends Controller
 
       $desas = Village::where('district_id',$id_kecamatan)->get();
 
-      $option = "<option>== Pilih Desa ==</option>";
+      $option = "<option>== Pilih Kampung ==</option>";
 
       foreach($desas as $desa) {
         $option.= "<option value='$desa->id'>$desa->name</option>";

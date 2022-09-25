@@ -1,7 +1,7 @@
 @extends('superuser.layouts.app')
 
 @section('title')
-Profil Desa
+Profil Kampung
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@ Profil Desa
       <div class="card-body pb-0 pt-3 bg-transparent">
         <div class="row">
           {{-- <div class="col-lg-5">
-            <h6 class="text-capitalize">Video Desa</h6>
+            <h6 class="text-capitalize">Video Kampung</h6>
             <div class="ratio ratio-16x9">
               @if ($setprofile != null)
               <iframe width="300" height="220" src="{{$setprofile->video_desa}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -638,7 +638,7 @@ Profil Desa
                   <tr>
                     <td>• Sebelah Timur</td>
                     <td>:</td>
-                    <td class="ps-1">Kampung Biatan Lempake <br> Biatan Biru</td>
+                    <td class="ps-1">Kampung Biatan Bapinang <br> Biatan Biru</td>
                   </tr>
                   <tr>
                     <td>• Sebelah Barat</td>
@@ -986,7 +986,7 @@ Profil Desa
 
 {{-- STATISTIK DESA --}}
 {{-- Card Count --}}
-<h5 class="mt-4 mb-2">Statistik Desa Biatan Lempake</h5>
+<h5 class="mt-4 mb-2">Statistik Kampung Biatan Bapinang</h5>
 <div class="row mb-sm-4">
   <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
     <div class="card">

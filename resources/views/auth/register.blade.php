@@ -250,9 +250,9 @@
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                   </div>
                   <select class="form-control @error('status') is-invalid @enderror" name="status" placeholder="status">
-                    <option value="">Status Warga Desa<option>
-                    <option value="Warga">Warga(KTP Desa)</option>
-                    <option value="Bukan Warga">Domisili(KTP Luar Desa)</option>
+                    <option value="">Status Warga Kampung<option>
+                    <option value="Warga">Warga(KTP Kampung)</option>
+                    <option value="Bukan Warga">Domisili(KTP Luar Kampung)</option>
                   </select>
                   @error('status')
                     <span class="invalid-feedback" role="alert">
@@ -316,7 +316,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                   </div>
-                  <select class="form-control me-3 @error('desa_ktp') is-invalid @enderror" id="desa" name="desa_ktp" placeholder="Desa">
+                  <select class="form-control me-3 @error('desa_ktp') is-invalid @enderror" id="desa" name="desa_ktp" placeholder="Kampung">
 
                   </select>
                   @error('desa_ktp')
@@ -425,7 +425,7 @@
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
                     <select class="form-control me-3 @error('desa_domisili') is-invalid @enderror" id="1desa" name="desa_domisili">
-                      <option value="">== Pilih Desa ==</option>
+                      <option value="">== Pilih Kampung ==</option>
                     </select>
                     @error('desa_domisili')
                       <span class="invalid-feedback" role="alert">
