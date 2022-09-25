@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
           'provinsi_ktp' => '64',
           'kota_ktp' => '6405',
           'kecamatan_ktp' => '6405110',
-          'desa_ktp' => '6405110005',
+          'desa_ktp' => '6405110001',
           'rt_ktp' => 'RT1',
           'rw_ktp' => 'RW2',
           'no_telpon' => '089607575813',

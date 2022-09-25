@@ -18,8 +18,8 @@ class ProfileDesaOfficerController extends Controller
     $charts = ChartBar::all();
 
     $total_kk = User::distinct()->count('kk');
-    $total_warga = User::selectRaw("COUNT(CASE WHEN desa_ktp = 6405110005  THEN 1 END) AS ktp")
-    ->selectRaw("COUNT(CASE WHEN desa_domisili = 6405110005 THEN 1 END) AS domisili")
+    $total_warga = User::selectRaw("COUNT(CASE WHEN desa_ktp = 6405110001  THEN 1 END) AS ktp")
+    ->selectRaw("COUNT(CASE WHEN desa_domisili = 6405110001 THEN 1 END) AS domisili")
     ->first();
 
     $kelamin = User::selectRaw("COUNT(CASE WHEN kelamin = 'Laki-Laki'  THEN 1 END) AS laki")
