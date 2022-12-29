@@ -14,12 +14,20 @@
 
 {{-- GIS --}}
 <script src="{{url('webgis/resources/qgis2web_expressions.js')}}"></script>
+<script src="{{url('webgis/resources/proj4.js')}}"></script>
+<script>proj4.defs('EPSG:32650','+proj=utm +zone=50 +datum=WGS84 +units=m +no_defs');</script>
 <script src="{{url('webgis/resources/polyfills.js')}}"></script>
 <script src="{{url('webgis/resources/functions.js')}}"></script>
 <script src="{{url('webgis/resources/ol.js')}}"></script>
 <script src="{{url('webgis/resources/ol-layerswitcher.js')}}"></script>
-<script src="{{url('webgis/layers/BatasKampungBiatanLempake_1.js')}}"></script>
-<script src="{{url('webgis/styles/BatasKampungBiatanLempake_1_style.js')}}"></script>
+<script src="{{url('webgis/layers/BatasAdministrasiBiatanBapinang_1.js')}}"></script>
+<script src="{{url('webgis/layers/JALAN_BAPINANG_4.js')}}"></script>
+<script src="{{url('webgis/layers/PersilBiatanBapinang_Erase2_2.js')}}"></script>
+<script src="{{url('webgis/layers/POLYGON_BAPINANG_21_NOV_3.js')}}"></script>
+<script src="{{url('webgis/styles/BatasAdministrasiBiatanBapinang_1_style.js')}}"></script>
+<script src="{{url('webgis/styles/JALAN_BAPINANG_4_style.js')}}"></script>
+<script src="{{url('webgis/styles/PersilBiatanBapinang_Erase2_2_style.js')}}"></script>
+<script src="{{url('webgis/styles/POLYGON_BAPINANG_21_NOV_3_style.js')}}"></script>
 <script src="{{url('webgis/layers/layers.js')}}" type="text/javascript"></script>
 <script src="{{url('webgis/resources/Autolinker.min.js')}}"></script>
 <script src="{{url('webgis/resources/qgis2web.js')}}"></script>
