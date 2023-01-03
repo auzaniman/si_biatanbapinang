@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="{{url('backend/plugin/Magnific/dist/magnific-popup/magnific-popup.css')}}">
 <!-- CSS Files -->
 <link id="pagestyle" href="{{url('backend/assets/css/argon-dashboard.css?v=2.0.2')}}" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 
 <style>
   /* @font-face{

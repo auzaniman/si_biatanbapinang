@@ -39,6 +39,26 @@
       </li>
       <li class="nav-item">
         <a class="nav-link
+          @if (\Request::is('user/statistik'))
+          active
+          @endif"
+          href="{{route('statistik')}}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-1 d-flex align-items-center justify-content-center">
+            <i class="ni ni-chart-bar-32 text-primary text-sm"></i>
+          </div>
+          <span class="nav-link-text ms-1">Statistik Kampung</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-active @if (\Request::is('user/struktur_organisasi')) active @endif" href="{{route('struktur_organisasi')}}">
+          <div class="icon icon-shape icon-sm border-radius-md text-center me-1 d-flex align-items-center justify-content-center">
+            <i class="ni ni-building text-primary text-sm"></i>
+          </div>
+          <span class="nav-link-text ms-1">Struktur Organisasi</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link
           @if (\Request::is('user/tdp'))
           active
           @endif" href="{{route('tantangan')}}">

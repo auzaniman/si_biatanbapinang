@@ -32,6 +32,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Officer\DataUserController;
+use App\Http\Controllers\Officer\StatistikKampungOfficerController;
+use App\Http\Controllers\Officer\StrukturOrganisasiController;
+use App\Http\Controllers\User\StatistikKampungController;
+use App\Http\Controllers\User\StrukturOrganisasiUserController;
 use App\Http\Controllers\Webgis\WebGisMemberController;
 use App\Http\Controllers\Webgis\WebGisOfficerController;
 
@@ -74,12 +78,27 @@ Route::middleware(["officer"])
   Route::get('/datausers', [DataUserController::class, "index"])->name("datauser");
 
   // Profile Desa
-  // Route::get("/desa", [ProfileDesaController::class, "Index"])->name("profile_desa");
   Route::get('/profiledesa', [ProfileDesaOfficerController::class, "index"])->name("profiledesa");
+  Route::post('/profile_kampung', [ProfileDesaOfficerController::class, "storeProfileKampung"])->name("profile_kampung");
+  Route::post('/struktur', [ProfileDesaOfficerController::class, "storeStrukturOrganisasi"])->name("struktur");
+  Route::post('/letak_geografis', [ProfileDesaOfficerController::class, "storeLetakGeografis"])->name("letak_geografis");
+  Route::post('/sarana_prasarana', [ProfileDesaOfficerController::class, "storeSaranaPrasarana"])->name("sarana_prasarana");
+
+  Route::put('/edit_profile_kampung/{id}', [ProfileDesaOfficerController::class, "updateProfileKampung"])->name("edit_profile_kampung");
+  Route::put('/edit_struktur/{id}', [ProfileDesaOfficerController::class, "updateStrukturOrganisasi"])->name("edit_struktur");
+  Route::put('/edit_letak_geografis/{id}', [ProfileDesaOfficerController::class, "updateLetakGeografis"])->name("edit_letak_geografis");
+  Route::put('/edit_sarana_prasarana/{id}', [ProfileDesaOfficerController::class, "updateSaranaPrasarana"])->name("edit_sarana_prasarana");
+
   Route::post('/chart_add', [ProfileDesaOfficerController::class, "store"])->name("chart_add");
   Route::get('/chart_edit_page', [ProfileDesaOfficerController::class, "index_edit"])->name("chart_edit_page");
   Route::put('/chart_edit/{id}', [ProfileDesaOfficerController::class, "update"])->name("chart_edit");
   Route::delete('/chart_delete/{id}', [ProfileDesaOfficerController::class, "destroy"])->name("chart_delete");
+
+  // Statistik Kampung
+  Route::get("/statistik", [StatistikKampungOfficerController::class, "Index"])->name("statistik");
+
+  // Struktur Organisasi Kampung
+  Route::get("/struktur_organisasi", [StrukturOrganisasiController::class, "Index"])->name("struktur_organisasi");
 
   // TDP
   Route::get("/tdp", [TantanganDanPotensiOfficerController::class, "Index"])->name("tantangan");
@@ -211,6 +230,12 @@ Route::prefix("user")
   // Profile Desa
   // Route::get("/desa", [ProfileDesaController::class, "Index"])->name("profile_desa");
   Route::get('/profile_desa', [ProfileDesaController::class, "index"])->name("profile_desa");
+
+  // Statistik Kampung
+  Route::get("/statistik", [StatistikKampungController::class, "Index"])->name("statistik");
+
+  // Struktur Organisasi Kampung
+  Route::get("/struktur_organisasi", [StrukturOrganisasiUserController::class, "Index"])->name("struktur_organisasi");
 
   // TDP
   Route::get("/tdp", [TantanganDanPotensiController::class, "Index"])->name("tantangan");

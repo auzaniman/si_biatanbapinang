@@ -43,31 +43,107 @@ Profil Kampung
             </div>
           </div> --}}
           <div class="col-lg-12">
-            <i class="fa text-warning fa-history" aria-hidden="true"></i>
+            <div class="d-flex justify-content-between">
+              <i class="fa text-warning fa-history" aria-hidden="true"></i>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto">
+                <i class="fa fa-pencil me-1" aria-hidden="true"></i>
+                Edit
+              </button>
+            </div>
             <h5 class="text-capitalize">Sejarah Kampung</h5>
-            <p class="mb-3">
-              {{-- @if ($setprofile != null)
-              {{$setprofile->sejarah_kampung}}
+            @if (($profil) != null)
+              @if ($profil->sejarah_kampung != null)
+                <p class="mb-3">{!! html_entity_decode($profil->sejarah_kampung) !!}</p>
               @else
+              @endif
+            @else
+              <p class="mb-3">
+                Biatan Bapinang merupakansalah satu dari empat perkampungan suku Dayak asli yang ada di wilayah Kecamatan Biatan, sehingga dapat dikatakan bahwa Kampung Biatan Bapinang ini adalah Perkampungan yang dibangun dari perkembangan peradaban adat suku yang sudah lama dan turun temurun menempati kampung tersebut.
+                <br>
+                Menurut cerita kampung ini dibangun oleh kesatuan Suku Dayak Basap, hal ini terlihat sampai sekarang yakni sebagian besar komunitas yang mendiami kampung tersebut adalalah dari suku Dayak Basap.
+                <br>
+                Sebagaimana sejarah perkampungan suku dayak di pedalaman kalimantan, Perkampungan tidak tahu pasti kapan berdirinya, oleh siapa dan dari mana asal-usul kampung ini secara pasti memang belum ada penelitian oleh para ahli. Namun berdasarkan Cerita dari sesepuh kampung, dapat kami gambarkan bahwa Kampung Biatan Bapinang, pada mulanya bernama “Nuntulung”, nama itu diambil dari pohon semak-semak sejenis “Keladi” yang pada saat itu banyak tumbuh disekitar perkampungan tersebut, oleh masyarakat setempat rumpun pohon jenis keladi itu dinamakan “BINTULUNG”
+                <br>
+                Sekelompok masyarakat yang tinggal di kampung itu bukan berasal dari situ namun konon berasal dari Perbukitan batu/Gua  batu  yang  hidupnya masih nomaden/berpindah-pindah dari tempat satu ke tempat lainnya tergantung dimana mereka mendapatkan Rizki dan tidak mendapat gangguan dari pihak-pihak lain, sebagian yang tidak berpindah lagi, menetap di kampung itu.
+                <br>
+                Seiring dengan penataan wilayah Indonesia Pasca Indonesia merdeka, termasuk dalam hal ini Pulau Kalimantan, untuk itu guna perbaikan administrasi, oleh Pejabat Kecamatan Talisayan Nama kampung itu diubah menjadi Kampung Biatan Bapinang, barang kali karena masih satu jalur dengan sungai Biatan.
+                <br>
+                Dalam perkembanganya, Suku Dayak yang tinggal di kampung ini cukup terbuka, sehingga mereka juga menerima pendatang dari luar, maka sampai saat ini bukan hanya suku dayak basap saja yang tinggal di sana, namun juga dari suku suku lain, yang hidup berdampingan, saling menghargai dan menghormati antar keyakinan yang berlainan. Sekarang ini penduduk kampung Biatan Bapinang sudah bisa di katakan heterogen karena ada suku-suku lain yang tinggal di kampug itu, diantaranya suku dayak bugis, jawa, sunda, ntb, flores, bali, batak dll. dengan aneka ragam adat dan budayanya juga.
+                <br>
+                Dalam bidang keagamaan, Masyarakat Kampung Biatan Bapinang pada awalnya adalah penganut agama suku/animisme, hal ini nampak dari tata cara kebiasaan orang-orang tua yang masih nampak sekarang ini seperti adat Bakudung/ Erau, Istilah “Kampunan” dan lain-lain yang masih melekat sampai sekarang, baru pada dekade tujuh puluhan (sektar tahun 1976) missionaris agama Kristen (Kingmi) masuk ke Kampung Biatan Bapinang, oleh karenanya sebagian besar masyarakat di sana menganut agama Kristen.
+                <br>
+                Dengan masuknya suku Bugis ke Kampung Biatan Bapinang, berpengaruh juga terhadap adat-istiadat dan agama, maka untuk saat ini selain Agama Kristen agama Islam juga berkembang pesat. Perbedaan suku dan agama bukan menjadi penghalang masyarakat untuk bersatu, mereka hidup berdampingan satu sama lainnya, saling membantu dan saling menghormati.
 
-              @endif --}}
-              Biatan Bapinang merupakansalah satu dari empat perkampungan suku Dayak asli yang ada di wilayah Kecamatan Biatan, sehingga dapat dikatakan bahwa Kampung Biatan Bapinang ini adalah Perkampungan yang dibangun dari perkembangan peradaban adat suku yang sudah lama dan turun temurun menempati kampung tersebut.
-              <br>
-              Menurut cerita kampung ini dibangun oleh kesatuan Suku Dayak Basap, hal ini terlihat sampai sekarang yakni sebagian besar komunitas yang mendiami kampung tersebut adalalah dari suku Dayak Basap.
-              <br>
-              Sebagaimana sejarah perkampungan suku dayak di pedalaman kalimantan, Perkampungan tidak tahu pasti kapan berdirinya, oleh siapa dan dari mana asal-usul kampung ini secara pasti memang belum ada penelitian oleh para ahli. Namun berdasarkan Cerita dari sesepuh kampung, dapat kami gambarkan bahwa Kampung Biatan Bapinang, pada mulanya bernama “Nuntulung”, nama itu diambil dari pohon semak-semak sejenis “Keladi” yang pada saat itu banyak tumbuh disekitar perkampungan tersebut, oleh masyarakat setempat rumpun pohon jenis keladi itu dinamakan “BINTULUNG”
-              <br>
-              Sekelompok masyarakat yang tinggal di kampung itu bukan berasal dari situ namun konon berasal dari Perbukitan batu/Gua  batu  yang  hidupnya masih nomaden/berpindah-pindah dari tempat satu ke tempat lainnya tergantung dimana mereka mendapatkan Rizki dan tidak mendapat gangguan dari pihak-pihak lain, sebagian yang tidak berpindah lagi, menetap di kampung itu.
-              <br>
-              Seiring dengan penataan wilayah Indonesia Pasca Indonesia merdeka, termasuk dalam hal ini Pulau Kalimantan, untuk itu guna perbaikan administrasi, oleh Pejabat Kecamatan Talisayan Nama kampung itu diubah menjadi Kampung Biatan Bapinang, barang kali karena masih satu jalur dengan sungai Biatan.
-              <br>
-              Dalam perkembanganya, Suku Dayak yang tinggal di kampung ini cukup terbuka, sehingga mereka juga menerima pendatang dari luar, maka sampai saat ini bukan hanya suku dayak basap saja yang tinggal di sana, namun juga dari suku suku lain, yang hidup berdampingan, saling menghargai dan menghormati antar keyakinan yang berlainan. Sekarang ini penduduk kampung Biatan Bapinang sudah bisa di katakan heterogen karena ada suku-suku lain yang tinggal di kampug itu, diantaranya suku dayak bugis, jawa, sunda, ntb, flores, bali, batak dll. dengan aneka ragam adat dan budayanya juga.
-              <br>
-              Dalam bidang keagamaan, Masyarakat Kampung Biatan Bapinang pada awalnya adalah penganut agama suku/animisme, hal ini nampak dari tata cara kebiasaan orang-orang tua yang masih nampak sekarang ini seperti adat Bakudung/ Erau, Istilah “Kampunan” dan lain-lain yang masih melekat sampai sekarang, baru pada dekade tujuh puluhan (sektar tahun 1976) missionaris agama Kristen (Kingmi) masuk ke Kampung Biatan Bapinang, oleh karenanya sebagian besar masyarakat di sana menganut agama Kristen.
-              <br>
-              Dengan masuknya suku Bugis ke Kampung Biatan Bapinang, berpengaruh juga terhadap adat-istiadat dan agama, maka untuk saat ini selain Agama Kristen agama Islam juga berkembang pesat. Perbedaan suku dan agama bukan menjadi penghalang masyarakat untuk bersatu, mereka hidup berdampingan satu sama lainnya, saling membantu dan saling menghormati.
+              </p>
+            @endif
 
-            </p>
+            {{-- Modal --}}
+            <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                  <div class="modal-body p-0">
+                    <div class="card card-plain">
+                      <div class="card-header pb-0 text-left">
+                        <h4 class="font-weight-bolder text-info text-gradient">Sejarah Kampung</h4>
+                      </div>
+                      <div class="card-body pt-0">
+                        @if (($profil) != null)
+                          @if ($profil->sejarah_kampung != null)
+                            <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
+                              @method('put')
+                              @csrf
+                              <label>Gunakan tanda baca yang benar</label>
+                              <div class="mb-3">
+                                <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
+                              </div>
+                              <div class="mb-3" hidden>
+                                <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
+                              </div>
+                              <div class="mb-3" hidden>
+                                <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
+                              </div>
+                              <div class="text-end">
+                                <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                              </div>
+                            </form>
+                          @else
+                            <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
+                              @method('put')
+                              @csrf
+                              <label>Gunakan tanda baca yang benar</label>
+                              <div class="mb-3">
+                                <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
+                              </div>
+                              <div class="mb-3" hidden>
+                                <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
+                              </div>
+                              <div class="mb-3" hidden>
+                                <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
+                              </div>
+                              <div class="text-end">
+                                <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                              </div>
+                            </form>
+                          @endif
+                        @else
+                          <form role="form text-left" action="{{route('officer.profile_kampung')}}" method="POST">
+                            @csrf
+                            <label>Gunakan tanda baca yang benar</label>
+                            <div class="mb-3">
+                              <textarea class="summernote" name="sejarah_kampung"></textarea>
+                            </div>
+                            <div class="text-end">
+                              <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                            </div>
+                          </form>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{-- End Modal --}}
           </div>
         </div>
       </div>
@@ -93,525 +169,205 @@ Profil Kampung
       <li>	Kepala Kampung VII	:  Ramli	( 2011 s/d2017 )</li>
       <li>	Kepala Kampung VIII (Pj)	:  Tri Suyanto, S.IP	(2017)</li>
       <li>	Kepala Kampung  IX	: Heberly	(2018 s/d sekarang)</li>
+      @forelse ($struktur as $item)
+      <li>	Kepala Kampung  X	: {{$item->nama_anggota}}</li>
+      @empty
+
+      @endforelse
     </ol>
     <div class="card px-0 mb-4">
       <div class="card-body pb-0 pt-3 bg-transparent">
-        <i class="fa text-warning fa-money" aria-hidden="true"></i>
+        <div class="d-flex justify-content-between">
+          <i class="fa text-warning fa-money" aria-hidden="true"></i>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form1" class="btn badge bg-gradient-primary ms-auto">
+            <i class="fa fa-pencil me-1" aria-hidden="true"></i>
+            Edit
+          </button>
+        </div>
         <h5 class="text-capitalize">Kondisi Ekonomi</h5>
-        <p>
-          Kondisi ekonomi masyarakat Kampung Biatan Bapinangsecara kasat mata terlihat jelas perbedaannya antara Rumah Tangga yang berkategori miskin, sangat miskin, sedang dan kaya. Hal ini disebabkan karena mata pencahariannya di sektor- sektor usaha yang berbeda-beda pula, sebagian besar di sektor non formal seperti buruh Harian Lepas Buruh bangunan, buruh tani, petani Ladang, perkebunan karet dan sawit dan sebagian kecil di sektor formal seperti PNS pemda, Honorer, guru, tenaga medis, dll.
-        </p>
+        @if (($profil) != null)
+          @if ($profil->kondisi_ekonomi != null)
+            <p class="mb-3">{!! html_entity_decode($profil->kondisi_ekonomi) !!}</p>
+          @else
+            <p>
+              Kondisi ekonomi masyarakat Kampung Biatan Bapinangsecara kasat mata terlihat jelas perbedaannya antara Rumah Tangga yang berkategori miskin, sangat miskin, sedang dan kaya. Hal ini disebabkan karena mata pencahariannya di sektor- sektor usaha yang berbeda-beda pula, sebagian besar di sektor non formal seperti buruh Harian Lepas Buruh bangunan, buruh tani, petani Ladang, perkebunan karet dan sawit dan sebagian kecil di sektor formal seperti PNS pemda, Honorer, guru, tenaga medis, dll.
+            </p>
+          @endif
+        @else
+          <p>
+            Kondisi ekonomi masyarakat Kampung Biatan Bapinangsecara kasat mata terlihat jelas perbedaannya antara Rumah Tangga yang berkategori miskin, sangat miskin, sedang dan kaya. Hal ini disebabkan karena mata pencahariannya di sektor- sektor usaha yang berbeda-beda pula, sebagian besar di sektor non formal seperti buruh Harian Lepas Buruh bangunan, buruh tani, petani Ladang, perkebunan karet dan sawit dan sebagian kecil di sektor formal seperti PNS pemda, Honorer, guru, tenaga medis, dll.
+          </p>
+        @endif
+        {{-- Modal --}}
+        <div class="modal fade" id="modal-form1" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-body p-0">
+                <div class="card card-plain">
+                  <div class="card-header pb-0 text-left">
+                    <h4 class="font-weight-bolder text-info text-gradient">Kondisi Ekonomi</h4>
+                  </div>
+                  <div class="card-body pt-0">
+                    @if (($profil) != null)
+                      @if ($profil->kondisi_ekonomi != null)
+                        <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
+                          @method('put')
+                          @csrf
+                          <label>Gunakan tanda baca yang benar</label>
+                          <div class="mb-3">
+                            <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
+                          </div>
+                          <div class="text-end">
+                            <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                          </div>
+                        </form>
+                      @else
+                        <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
+                          @method('put')
+                          @csrf
+                          <label>Gunakan tanda baca yang benar</label>
+                          <div class="mb-3">
+                            <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
+                          </div>
+                          <div class="text-end">
+                            <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                          </div>
+                        </form>
+                      @endif
+                    @else
+                      <form role="form text-left" action="{{route('officer.profile_kampung')}}" method="POST">
+                        @csrf
+                        <label>Gunakan tanda baca yang benar</label>
+                        <div class="mb-3">
+                          <textarea class="summernote" name="kondisi_ekonomi"></textarea>
+                        </div>
+                        <div class="text-end">
+                          <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+                        </div>
+                      </form>
+                    @endif
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{-- End Modal --}}
       </div>
     </div>
     <div class="card px-0">
       <div class="card-body pb-0 pt-3 bg-transparent">
-        <i class="fa text-warning fa-envira" aria-hidden="true"></i>
+        <div class="d-flex justify-content-between">
+          <i class="fa text-warning fa-envira" aria-hidden="true"></i>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
+            <i class="fa fa-pencil me-1" aria-hidden="true"></i>
+            Edit
+          </button>
+        </div>
         <h5 class="text-capitalize">Kondisi Pemerintah Kampung</h5>
-        <ul class="ps-4">
-          <li>	Pembagian Wilayah Kampung
-          Pembagian wilayah Kampung Biatan Bapinang dibagi menjadi 3 (tiga) RT, dan masing-masing RT tidak ada pembagian wilayah secara khusus, jadi di setiap RT ada yang mempunyai wilayah pertanian dan perkebunan, sementara pusat Kampung berada di RT 001 (satu) dan RT 002 (dua), setiap RT dipimpin oleh seorang Ketua RT.
-          </li>
-          <li>	Struktur Organisasi Pemerintah Kampung (SOPK)
-          Struktur Organisasi Kampung Biatan Bapinang Kecamatan Biatan selengkapnya disajikan dalam gambar sebagai berikut :
-          </li>
-          <button class="btn btn-warning mt-3">Lihat Gambar</button>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+        @if (($profil) != null)
+          @if ($profil->kondisi_pemerintah != null)
+            <p class="mb-3">{!! html_entity_decode($profil->kondisi_pemerintah) !!}</p>
+          @else
+            <ul class="ps-4">
+              <li>	Pembagian Wilayah Kampung
+              Pembagian wilayah Kampung Biatan Bapinang dibagi menjadi 3 (tiga) RT, dan masing-masing RT tidak ada pembagian wilayah secara khusus, jadi di setiap RT ada yang mempunyai wilayah pertanian dan perkebunan, sementara pusat Kampung berada di RT 001 (satu) dan RT 002 (dua), setiap RT dipimpin oleh seorang Ketua RT.
+              </li>
+              <li>	Struktur Organisasi Pemerintah Kampung (SOPK)
+              Struktur Organisasi Kampung Biatan Bapinang Kecamatan Biatan selengkapnya disajikan dalam gambar sebagai berikut :
+              </li>
+            </ul>
+          @endif
+        @else
+          <ul class="ps-4">
+            <li>	Pembagian Wilayah Kampung
+            Pembagian wilayah Kampung Biatan Bapinang dibagi menjadi 3 (tiga) RT, dan masing-masing RT tidak ada pembagian wilayah secara khusus, jadi di setiap RT ada yang mempunyai wilayah pertanian dan perkebunan, sementara pusat Kampung berada di RT 001 (satu) dan RT 002 (dua), setiap RT dipimpin oleh seorang Ketua RT.
+            </li>
+            <li>	Struktur Organisasi Pemerintah Kampung (SOPK)
+            Struktur Organisasi Kampung Biatan Bapinang Kecamatan Biatan selengkapnya disajikan dalam gambar sebagai berikut :
+            </li>
+          </ul>
+        @endif
 
-{{-- Struktur Organisasi --}}
-<div class="card mt-4">
-  <div class="card-body pt-3 bg-transparent">
-    <i class="fa text-warning fa-sitemap" aria-hidden="true"></i>
-    <h5>Struktur Organisasi Pemerintahan Kampung Biatan Bapinang</h5>
-    <div class="row mt-4">
-      <div class="col-lg-6 mb-lg-0 mb-4">
-        <div class="card shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Pemerintahan Pusat
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Kepala Kampung</td>
-                    <td class="align-middle text-sm">: Heberly</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris Kampung</td>
-                    <td class="align-middle text-sm">: Rifka Philipus</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Kaur Pemerintahan</td>
-                    <td class="align-middle text-sm">: Septi Eunike. R</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Kaur Umum</td>
-                    <td class="align-middle text-sm">: Chandra Hariyadi</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Kaur Pembangunan</td>
-                    <td class="align-middle text-sm">: Marten</td>
-                  </tr>
-                </tbody>
-              </table>
+        {{-- Modal --}}
+        <div class="modal fade" id="modal-form2" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-body p-0">
+                <div class="card card-plain">
+                  <div class="card-header pb-0 text-left">
+                    <h4 class="font-weight-bolder text-info text-gradient">Kondisi Pemerintah Kampung</h4>
+                  </div>
+                  <div class="card-body pt-0">
+                    @if (($profil) != null)
+                      @if ($profil->kondisi_pemerintah != null)
+                        <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
+                          @method('put')
+                          @csrf
+                          <label>Gunakan tanda baca yang benar</label>
+                          <div class="mb-3">
+                            <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
+                          </div>
+                          <div class="text-end">
+                            <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                          </div>
+                        </form>
+                      @else
+                        <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
+                          @method('put')
+                          @csrf
+                          <label>Gunakan tanda baca yang benar</label>
+                          <div class="mb-3">
+                            <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
+                          </div>
+                          <div class="mb-3" hidden>
+                            <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
+                          </div>
+                          <div class="text-end">
+                            <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                          </div>
+                        </form>
+                      @endif
+                    @else
+                      <form role="form text-left" action="{{route('officer.profile_kampung')}}" method="POST">
+                        @csrf
+                        <label>Gunakan tanda baca yang benar</label>
+                        <div class="mb-3">
+                          <textarea class="summernote" name="kondisi_pemerintah"></textarea>
+                        </div>
+                        <div class="text-end">
+                          <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+                        </div>
+                      </form>
+                    @endif
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6 mb-lg-0 mb-4">
-        <div class="card shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Badan Permusyawaratan Kampung
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Kepala BPK</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Cupin Yusak</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Wakil Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Sukarman</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretsris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Sabar</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                      Evi Septi Miri Dewi
-                      <br>
-                      Marlinda Klaberi
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-lg-4 mt-0">
-      <div class="col-lg-6 mb-lg-0 mb-4">
-        <div class="card mb-4 shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Lembaga Pemberdayaan Masyarakat
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Kepala LPM</td>
-                    <td class="align-middle text-sm">: Heberly</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Wakil Ketua</td>
-                    <td class="align-middle text-sm">: Amos Pangeran</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris</td>
-                    <td class="align-middle text-sm">: Yudha Timor</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Bendahara</td>
-                    <td class="align-middle text-sm">: Karim Mika</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Agama</td>
-                    <td class="align-middle text-sm">: Sultan</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Keamanan, Ketentraman & Ketertiban</td>
-                    <td class="align-middle text-sm">: Juhari</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Pendidikan</td>
-                    <td class="align-middle text-sm">: Sulkarnain</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Lingkungan Hidup</td>
-                    <td class="align-middle text-sm">: Julius</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Kesehatan</td>
-                    <td class="align-middle text-sm">: Nuradawiyah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Pemuda, Olahraga dan Kesenian</td>
-                    <td class="align-middle text-sm">: Nasir</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Pembangunan dan Ekonomi</td>
-                    <td class="align-middle text-sm">: Sarwo</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Kesejahteraan Sosial</td>
-                    <td class="align-middle text-sm">: Jamma</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi Pemberdayaan Wanita</td>
-                    <td class="align-middle text-sm">: Yuyun Yunarti</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-4 shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Pengurus Posyandu
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Nursibah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Malah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Bendahara</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Erni</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                      Ny.Suryani
-                      <br>
-                      Ny.Senna Hati
-                      <br>
-                      Ny.Santi
-                      <br>
-                      Ny.Aisyah
-                      <br>
-                      Ny.Munjayana
-                      <br>
-                      Ny.Rika Jasmani
-                      <br>
-                      Ny.Basso Ibrahim
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-4 shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Karang Taruna
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Yudha Timor</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Wakil Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Yohanis</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris I</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Jayadi Arianto</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris II</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Dewi</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Bendahara I</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Jamil</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Bendahara II</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Mardiana</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Kelompok Sadar Wisata
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Wandra Hardianti</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Wakil Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ikhsan Yunus</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris I</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Yuliana Marsyiah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris II</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Basso Ibrahim</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Bendahara I</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Supriyono</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Seksi-seksi</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Seksi Atraksi Wisata dan Budaya</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Jamil</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Seksi Kebersihan dan Keindahan</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Mashudi</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Seksi Pendidikan dan Usaha</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Marten Yohanis</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 mb-lg-0">
-        <div class="card mb-4 shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Ketua RT
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua RT 01</td>
-                    <td class="align-middle text-sm">: Ibung</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua RT 02</td>
-                    <td class="align-middle text-sm">: Agus Hendra</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua RT 03</td>
-                    <td class="align-middle text-sm">: Darwis</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="card shadow-none">
-          <div class="card-header text-uppercase pb-2 pt-2 ps-3 font-weight-bold bg-success text-white">
-          Pengurus Tim Penggerak PKK Kampung
-          </div>
-          <div class="card-body pb-0 pt-2 ps-3">
-            <div class="table-responsive">
-              <table class="table-borderless align-items-center mb-2">
-                <tbody>
-                  <tr>
-                    <td class="align-middle text-sm">Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny. Nurhayaty Heberly</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Wakil Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Evi Septi Miri Dewi Yudhda</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Rifka</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Sekretaris II</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Jenny</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Bendahara</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Ida Laila Royana Chandra</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Pokja I</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Hj.Sanawia</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Sekretaris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Septi Eunika R Bernov</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                      Ny.Maslina Amos Pangeran
-                      <br>
-                      Ny.Samsi
-                      <br>
-                      Ny.Milati
-                      <br>
-                      Ny.Noftiani
-                      <br>
-                      Ny.Mirna
-                      <br>
-                      Ny.Hayati
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Pokja II</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Asimah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Sekretaris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Kasmawati</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                      Ny.Sumi
-                      <br>
-                      Ny.Mariana
-                      <br>
-                      Ny.Besse Nuraini
-                      <br>
-                      Ny.Yunarti
-                      <br>
-                      Ny.Darlia
-                      <br>
-                      Ny.Jumaida
-                      <br>
-                      Ny.Sandra
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Pokja III</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Lusia Wiwin</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Sekretaris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Marsiah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                      Ny.Rika Jasmani
-                      <br>
-                      Ny.Hajriwati
-                      <br>
-                      Ny.Endang
-                      <br>
-                      Ny.Munjayana
-                      <br>
-                      Ny.Mardiana
-                      <br>
-                      Ny.Nasra
-                      <br>
-                      Ny.Seri Wati
-                      <br>
-                      Ny.Wagiah
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm">Pokja IV</td>
-                  </tr>
-                  <tr class="">
-                    <td class="align-middle text-sm ps-1">• Ketua</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Erni</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Sekretaris</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">Ny.Nursibah</td>
-                  </tr>
-                  <tr>
-                    <td class="align-middle text-sm ps-1">• Anggota</td>
-                    <td class="align-middle text-sm">:</td>
-                    <td class="align-middle text-sm">
-                      Ny.Dewi
-                      <br>
-                      Ny.Mala
-                      <br>
-                      Ny.Ratna Ramli
-                      <br>
-                      Ny.Aisyah
-                      <br>
-                      Ny.Senna Hati
-                      <br>
-                      Ny.Suryani
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        {{-- End Modal --}}
       </div>
     </div>
   </div>
@@ -622,7 +378,67 @@ Profil Kampung
   <div class="col-lg-12 mb-lg-0">
     <div class="card px-0">
       <div class="card-body pb-0 pt-3 bg-transparent">
-        <i class="fa text-warning fa-map-marker" aria-hidden="true"></i>
+        <div class="d-flex justify-content-between">
+          <i class="fa text-warning fa-map-marker" aria-hidden="true"></i>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form4" class="btn badge bg-gradient-primary ms-auto">
+            <i class="fa fa-pencil me-1" aria-hidden="true"></i>
+            Edit
+          </button>
+        </div>
+        {{-- Modal --}}
+        <div class="modal fade" id="modal-form4" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+              <div class="modal-body p-0">
+                <div class="card card-plain">
+                  <div class="card-header pb-0 text-left">
+                    <h4 class="font-weight-bolder text-info text-gradient">Letak Geografis</h4>
+                  </div>
+                  <div class="card-body pt-0">
+                    <form role="form text-left" action="{{route('officer.letak_geografis')}}" method="POST">
+                      @csrf
+                      <label>Batas Wilayah</label>
+                      <div class="input-group mb-3">
+                        <select class="form-control me-3 @error('batas_wilayah') is-invalid @enderror" id="batas_wilayah" name="batas_wilayah">
+                          <option data-display="Pilih Batas Wilayah">-</option>
+                          <option value="utara">Sebelah Utara</option>
+                          <option value="timur">Sebelah Timur</option>
+                          <option value="barat">Sebelah Barat</option>
+                          <option value="selatan">Sebelah Selatan</option>
+                        </select>
+                      </div>
+                      <label>Keterangan Batas</label>
+                      <div class="input-group mb-3">
+                        <input type="text" name="keterangan_batas" id="keterangan_batas" class="form-control">
+                      </div>
+                      <label>Orbitasi</label>
+                      <div class="input-group mb-3">
+                        <select class="form-control me-3 @error('keterangan_batas') is-invalid @enderror" id="orbitasi" name="orbitasi">
+                          <option data-display="Pilih Batas Wilayah">-</option>
+                          <option value="jarak_kecamatan">Jarak Kampung ke Ibu Kota Kecamatan</option>
+                          <option value="lama_tempuh_kecamatan">Lama Tempuh ke Ibu Kota Kecamatan</option>
+                          <option value="kendaraan_kecamatan">Kendaraan umum ke ibu kota kecamatan</option>
+                          <option value="jarak_kabupaten">Jarak ke ibu Kota Kabupaten</option>
+                          <option value="lama_tempuh_kabupaten">Lama tempuh ke ibu Kota Kabupaten</option>
+                          <option value="kendaraan_kabupaten">Kendaraan umum ke ibu kota Kabupaten</option>
+                        </select>
+                      </div>
+                      <label>Keterangan Orbitasi</label>
+                      <div class="input-group mb-3">
+                        <input type="text" name="keterangan_orbitasi" id="keterangan_orbitasi" class="form-control">
+                      </div>
+                      <div class="text-end">
+                        <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{-- End Modal --}}
+
         <h5 class="text-capitalize">Letak Geografis</h5>
         <p>Kampung   Biatan   Bapinang   merupakansatu diantara  delapan Kampung di Kecamatan Biatan Kabupaten Berau Propinsi Kalimantan Timur. </p>
         <div class="row">
@@ -631,26 +447,57 @@ Profil Kampung
               <li class="font-weight-bold">Batas-batas wilayah sebagai berikut:</li>
               <table class="table-borderless">
                 <tbody>
-                  <tr>
-                    <td>• Sebelah Utara</td>
-                    <td>:</td>
-                    <td class="ps-1">Tabalar Muara</td>
-                  </tr>
-                  <tr>
-                    <td>• Sebelah Timur</td>
-                    <td>:</td>
-                    <td class="ps-1">Kampung Biatan Bapinang <br> Biatan Biru</td>
-                  </tr>
-                  <tr>
-                    <td>• Sebelah Barat</td>
-                    <td>:</td>
-                    <td class="ps-1">Kampung Tabalar Ulu</td>
-                  </tr>
-                  <tr>
-                    <td>• Sebelah Selatan</td>
-                    <td>:</td>
-                    <td class="ps-1">Kutai Timur</td>
-                  </tr>
+                  @forelse ($geografis as $item)
+                    @if ($item->batas_wilayah && $item->keterangan_batas == null)
+                      <tr>
+                        <td>• Sebelah Utara</td>
+                        <td>:</td>
+                        <td class="ps-1">Tabalar Muara</td>
+                      </tr>
+                      <tr>
+                        <td>• Sebelah Timur</td>
+                        <td>:</td>
+                        <td class="ps-1">Kampung Biatan Bapinang <br> Biatan Biru</td>
+                      </tr>
+                      <tr>
+                        <td>• Sebelah Barat</td>
+                        <td>:</td>
+                        <td class="ps-1">Kampung Tabalar Ulu</td>
+                      </tr>
+                      <tr>
+                        <td>• Sebelah Selatan</td>
+                        <td>:</td>
+                        <td class="ps-1">Kutai Timur</td>
+                      </tr>
+                    @else
+                      <tr>
+                        <td>• Sebelah {{$item->batas_wilayah}}</td>
+                        <td>:</td>
+                        <td class="ps-1">{{$item->keterangan_batas}}</td>
+                      </tr>
+                    @endif
+                  @empty
+                    <tr>
+                      <td>• Sebelah Utara</td>
+                      <td>:</td>
+                      <td class="ps-1">Tabalar Muara</td>
+                    </tr>
+                    <tr>
+                      <td>• Sebelah Timur</td>
+                      <td>:</td>
+                      <td class="ps-1">Kampung Biatan Bapinang <br> Biatan Biru</td>
+                    </tr>
+                    <tr>
+                      <td>• Sebelah Barat</td>
+                      <td>:</td>
+                      <td class="ps-1">Kampung Tabalar Ulu</td>
+                    </tr>
+                    <tr>
+                      <td>• Sebelah Selatan</td>
+                      <td>:</td>
+                      <td class="ps-1">Kutai Timur</td>
+                    </tr>
+                  @endforelse
                 </tbody>
               </table>
             </ol>
@@ -660,36 +507,77 @@ Profil Kampung
               <li class="font-weight-bold">Orbitasi:</li>
               <table class="table-borderless">
                 <tbody>
-                  <tr>
-                    <td>• Jarak Kampung ke ibu kota Kecamatan</td>
-                    <td>:</td>
-                    <td class="ps-1">8 Km</td>
-                  </tr>
-                  <tr>
-                    <td>• Lama tempuh ke ibu kota kecamatan</td>
-                    <td>:</td>
-                    <td class="ps-1">15 menit</td>
-                  </tr>
-                  <tr>
-                    <td>• Kendaraan umum ke ibu kota kecamatan</td>
-                    <td>:</td>
-                    <td class="ps-1">Kendaraan Darat</td>
-                  </tr>
-                  <tr>
-                    <td>• Jarak ke ibu Kota Kecamatan</td>
-                    <td>:</td>
-                    <td class="ps-1">125 Km</td>
-                  </tr>
-                  <tr>
-                    <td>• Lama tempuh ke ibu Kota Kabupaten</td>
-                    <td>:</td>
-                    <td class="ps-1">240 menit</td>
-                  </tr>
-                  <tr>
-                    <td>• Kendaraan umum ke ibu kota Kabupaten</td>
-                    <td>:</td>
-                    <td class="ps-1">Kendaraan Darat</td>
-                  </tr>
+                  @forelse ($orbitasi as $item)
+                    @if ($item->orbitasi && $item->keterangan_orbitasi == null)
+                      <tr>
+                        <td>• Jarak Kampung ke ibu kota Kecamatan</td>
+                        <td>:</td>
+                        <td class="ps-1">8 Km</td>
+                      </tr>
+                      <tr>
+                        <td>• Lama tempuh ke ibu kota kecamatan</td>
+                        <td>:</td>
+                        <td class="ps-1">15 menit</td>
+                      </tr>
+                      <tr>
+                        <td>• Kendaraan umum ke ibu kota kecamatan</td>
+                        <td>:</td>
+                        <td class="ps-1">Kendaraan Darat</td>
+                      </tr>
+                      <tr>
+                        <td>• Jarak ke ibu Kota Kecamatan</td>
+                        <td>:</td>
+                        <td class="ps-1">125 Km</td>
+                      </tr>
+                      <tr>
+                        <td>• Lama tempuh ke ibu Kota Kabupaten</td>
+                        <td>:</td>
+                        <td class="ps-1">240 menit</td>
+                      </tr>
+                      <tr>
+                        <td>• Kendaraan umum ke ibu kota Kabupaten</td>
+                        <td>:</td>
+                        <td class="ps-1">Kendaraan Darat</td>
+                      </tr>
+                    @else
+                      <tr>
+                        <td>• {{$item->orbitasi}}</td>
+                        <td>:</td>
+                        <td class="ps-1">{{$item->keterangan_orbitasi}}</td>
+                      </tr>
+                    @endif
+                  @empty
+                    <tr>
+                      <td>• Jarak Kampung ke ibu kota Kecamatan</td>
+                      <td>:</td>
+                      <td class="ps-1">8 Km</td>
+                    </tr>
+                    <tr>
+                      <td>• Lama tempuh ke ibu kota kecamatan</td>
+                      <td>:</td>
+                      <td class="ps-1">15 menit</td>
+                    </tr>
+                    <tr>
+                      <td>• Kendaraan umum ke ibu kota kecamatan</td>
+                      <td>:</td>
+                      <td class="ps-1">Kendaraan Darat</td>
+                    </tr>
+                    <tr>
+                      <td>• Jarak ke ibu Kota Kecamatan</td>
+                      <td>:</td>
+                      <td class="ps-1">125 Km</td>
+                    </tr>
+                    <tr>
+                      <td>• Lama tempuh ke ibu Kota Kabupaten</td>
+                      <td>:</td>
+                      <td class="ps-1">240 menit</td>
+                    </tr>
+                    <tr>
+                      <td>• Kendaraan umum ke ibu kota Kabupaten</td>
+                      <td>:</td>
+                      <td class="ps-1">Kendaraan Darat</td>
+                    </tr>
+                  @endforelse
                 </tbody>
               </table>
             </ol>
@@ -703,39 +591,98 @@ Profil Kampung
 {{-- Sarana Prasarana --}}
 <div class="card mt-4">
   <div class="card-body pt-3 bg-transparent">
-    <i class="fa text-warning fa-briefcase" aria-hidden="true"></i>
+    <div class="d-flex justify-content-between">
+      <i class="fa text-warning fa-briefcase" aria-hidden="true"></i>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form5" class="btn badge bg-gradient-primary ms-auto">
+        <i class="fa fa-plus me-1" aria-hidden="true"></i>
+        Tambah
+      </button>
+    </div>
+    {{-- Modal --}}
+    <div class="modal fade" id="modal-form5" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <div class="card card-plain">
+              <div class="card-header pb-0 text-left">
+                <h4 class="font-weight-bolder text-info text-gradient">Sarana Prasarana</h4>
+              </div>
+              <div class="card-body pt-0">
+                <form role="form text-left" action="{{route('officer.sarana_prasarana')}}" method="POST">
+                  @csrf
+                  <label>Jenis Fasilitas Sarana Prasarana</label>
+                  <div class="input-group mb-3">
+                    <select class="form-control me-3 @error('verifikasi') is-invalid @enderror" id="jenis_fasilitas" name="jenis_fasilitas">
+                      <option data-display="Pilih Batas Wilayah">-</option>
+                      <option value="akses">Aksesbilitas/Jalan</option>
+                      <option value="pendidikan">Pendidikan</option>
+                      <option value="kesehatan">Kesehatan</option>
+                      <option value="pertanian_perternakan">Pertanian/Perternakan</option>
+                      <option value="fasilitas_umum">Fasilitas Umum</option>
+                    </select>
+                  </div>
+                  <label>Nama Barang</label>
+                  <div class="input-group mb-3">
+                    <input type="text" name="nama_barang" id="nama_barang" class="form-control">
+                  </div>
+                  <label>Jumlah Barang</label>
+                  <div class="input-group mb-3">
+                    <input type="text" name="jumlah_barang" id="jumlah_barang" class="form-control">
+                  </div>
+                  <div class="text-end">
+                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- End Modal --}}
     <h5>Sarana Prasarana Kampung</h5>
     <div class="row mt-4">
       <div class="col-lg-12 mb-lg-0">
-        <h6><i class="fa text-success fa-road me-2" aria-hidden="true"></i>Jalan</h6>
+        <div class="d-flex justify-content-between">
+          <h6><i class="fa text-success fa-road me-2" aria-hidden="true"></i>Jalan</h6>
+        </div>
+
         <p>Jaringan jalan yang ada di Kampung Biatan Bapinang yaitu jalan pemukiman RT.01 dan 02 yang merupakan jalan poros Tanjung Redeb-Talisayan. Jalan pemukiman yang lebar dan dapat dilalui oleh mobil. Sedangkan jalan emukiman RT.03 merupakan jalan menuju wisata Air Panas. Pembangunan jalan Biata Bapinang fokus pada peningkatan jalan usaha tani, serta oenimbunan dengan pasir dan batu (sirtu)</p>
         <table class="table-borderless">
           <tbody>
-            <tr>
-              <td class="ps-1">• Panjang jalan poros</td>
-              <td>:</td>
-              <td class="ps-1">5 km</td>
-            </tr>
-            <tr>
-              <td class="ps-1">• Panjang jalan kampung</td>
-              <td>:</td>
-              <td class="ps-1">4 km</td>
-            </tr>
-            <tr>
-              <td class="ps-1">• Panjang jalan kampung yang baik</td>
-              <td>:</td>
-              <td class="ps-1">2 km</td>
-            </tr>
-            <tr>
-              <td class="ps-1">• Panjang jalan kampung yang rusak</td>
-              <td>:</td>
-              <td class="ps-1">2 km</td>
-            </tr>
-            <tr>
-              <td class="ps-1">• Panjang jalan poros yang rusak</td>
-              <td>:</td>
-              <td class="ps-1">2 km</td>
-            </tr>
+            @forelse ($sarana_jalan as $item)
+              <tr>
+                <td class="ps-2">• {{$item->nama_barang}}</td>
+                <td>:</td>
+                <td class="ps-1">{{$item->jumlah_barang}}</td>
+              </tr>
+            @empty
+              <tr>
+                <td class="ps-2">• Panjang jalan poros</td>
+                <td>:</td>
+                <td class="ps-1">5 km</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Panjang jalan kampung</td>
+                <td>:</td>
+                <td class="ps-1">4 km</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Panjang jalan kampung yang baik</td>
+                <td>:</td>
+                <td class="ps-1">2 km</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Panjang jalan kampung yang rusak</td>
+                <td>:</td>
+                <td class="ps-1">2 km</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Panjang jalan poros yang rusak</td>
+                <td>:</td>
+                <td class="ps-1">2 km</td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>
@@ -745,66 +692,74 @@ Profil Kampung
         <h6><i class="fa text-success fa-graduation-cap me-2" aria-hidden="true"></i>Pendidikan</h6>
         <table class="table-borderless">
           <tbody>
-            <tr>
-              <td class="ps-2">• Gedung SD</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit 3 ruangan </td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung SMP</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit 14 ruangan </td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung SMA</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung PAUD</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit 3 ruangan </td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung TK</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung TPA</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Guru SD</td>
-              <td>:</td>
-              <td class="ps-1">12 Orang</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Guru SMP</td>
-              <td>:</td>
-              <td class="ps-1">13 Orang</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Guru SMA</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Guru PAUD</td>
-              <td>:</td>
-              <td class="ps-1">5 Orang</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Guru TK</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Guru TPA</td>
-              <td>:</td>
-              <td class="ps-1">5 Orang</td>
-            </tr>
+            @forelse ($sarana_pendidikan as $item)
+              <tr>
+                <td class="ps-2">• {{$item->nama_barang}}</td>
+                <td>:</td>
+                <td class="ps-1">{{$item->jumlah_barang}}</td>
+              </tr>
+            @empty
+              <tr>
+                <td class="ps-2">• Gedung SD</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit 3 ruangan </td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung SMP</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit 14 ruangan </td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung SMA</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung PAUD</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit 3 ruangan </td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung TK</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung TPA</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Guru SD</td>
+                <td>:</td>
+                <td class="ps-1">12 Orang</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Guru SMP</td>
+                <td>:</td>
+                <td class="ps-1">13 Orang</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Guru SMA</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Guru PAUD</td>
+                <td>:</td>
+                <td class="ps-1">5 Orang</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Guru TK</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Guru TPA</td>
+                <td>:</td>
+                <td class="ps-1">5 Orang</td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>
@@ -812,41 +767,49 @@ Profil Kampung
         <h6><i class="fa text-success fa-hospital-o me-2" aria-hidden="true"></i>Kesehatan</h6>
         <table class="table-borderless">
           <tbody>
-            <tr>
-              <td class="ps-2">• Gedung Puskesmas Pembantu</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung Polindes</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gedung Posyandu</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Mantri Kesehatan</td>
-              <td>:</td>
-              <td class="ps-1">1 Orang</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Bidan Kesehatan</td>
-              <td>:</td>
-              <td class="ps-1">1 Orang</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Dukun Kesehatan</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Kader Posyandu</td>
-              <td>:</td>
-              <td class="ps-1">10 Orang</td>
-            </tr>
+            @forelse ($sarana_kesehatan as $item)
+              <tr>
+                <td class="ps-2">• {{$item->nama_barang}}</td>
+                <td>:</td>
+                <td class="ps-1">{{$item->jumlah_barang}}</td>
+              </tr>
+            @empty
+              <tr>
+                <td class="ps-2">• Gedung Puskesmas Pembantu</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung Polindes</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gedung Posyandu</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Mantri Kesehatan</td>
+                <td>:</td>
+                <td class="ps-1">1 Orang</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Bidan Kesehatan</td>
+                <td>:</td>
+                <td class="ps-1">1 Orang</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Dukun Kesehatan</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Kader Posyandu</td>
+                <td>:</td>
+                <td class="ps-1">10 Orang</td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>
@@ -856,66 +819,74 @@ Profil Kampung
         <h6><i class="fa text-success fa-building me-2" aria-hidden="true"></i>Sarana/Prasarana Lainnya</h6>
         <table class="table-borderless">
           <tbody>
-            <tr>
-              <td class="ps-2">• Rumah Penduduk</td>
-              <td>:</td>
-              <td class="ps-1"> </td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Masjid</td>
-              <td>:</td>
-              <td class="ps-1">1 Buah</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Mushola</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gereja Katolik</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Gereja Protestan</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Kantor Kampung</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Balai Kampung</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Balai Adat</td>
-              <td>:</td>
-              <td class="ps-1"> </td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Penggilingan Padi</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Lapangan Voli</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Lapangan Bulu Tangkis</td>
-              <td>:</td>
-              <td class="ps-1">1 Unit</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Lapangan Sepak Bola</td>
-              <td>:</td>
-              <td class="ps-1">-</td>
-            </tr>
+            @forelse ($sarana_umum as $item)
+              <tr>
+                <td class="ps-2">• {{$item->nama_barang}}</td>
+                <td>:</td>
+                <td class="ps-1">{{$item->jumlah_barang}}</td>
+              </tr>
+            @empty
+              <tr>
+                <td class="ps-2">• Rumah Penduduk</td>
+                <td>:</td>
+                <td class="ps-1"> </td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Masjid</td>
+                <td>:</td>
+                <td class="ps-1">1 Buah</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Mushola</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gereja Katolik</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Gereja Protestan</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Kantor Kampung</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Balai Kampung</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Balai Adat</td>
+                <td>:</td>
+                <td class="ps-1"> </td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Penggilingan Padi</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Lapangan Voli</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Lapangan Bulu Tangkis</td>
+                <td>:</td>
+                <td class="ps-1">1 Unit</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Lapangan Sepak Bola</td>
+                <td>:</td>
+                <td class="ps-1">-</td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>
@@ -923,465 +894,75 @@ Profil Kampung
         <h6><i class="fa text-success fa-leaf me-2" aria-hidden="true"></i>Pertanian/Perternakan</h6>
         <table class="table-borderless">
           <tbody>
-            <tr>
-              <td class="ps-2">• Luas Tanah Padi GOGO Potensi</td>
-              <td>:</td>
-              <td class="ps-1">500 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Luas Tanah Garapan Tahun Ini</td>
-              <td>:</td>
-              <td class="ps-1">150 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Luas Tanah Pertanian Ladang</td>
-              <td>:</td>
-              <td class="ps-1">150 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Lahan Perkebunan Kelapa Sawit</td>
-              <td>:</td>
-              <td class="ps-1">400 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Luas Kebun Lada/Merica</td>
-              <td>:</td>
-              <td class="ps-1">150 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Luas Kebun Kopi</td>
-              <td>:</td>
-              <td class="ps-1">1 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Luas Kebun Kakau</td>
-              <td>:</td>
-              <td class="ps-1">3 Ha</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Jumlah Ayam</td>
-              <td>:</td>
-              <td class="ps-1">1150 Ekor</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Jumlah Bebek</td>
-              <td>:</td>
-              <td class="ps-1">50 Ekor</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Jumlah Kambing</td>
-              <td>:</td>
-              <td class="ps-1">10 Ekor</td>
-            </tr>
-            <tr>
-              <td class="ps-2">• Jumlah Sapi</td>
-              <td>:</td>
-              <td class="ps-1">20 Ekor/td>
-            </tr>
+            @forelse ($sarana_pertanian as $item)
+              <tr>
+                <td class="ps-2">• {{$item->nama_barang}}</td>
+                <td>:</td>
+                <td class="ps-1">{{$item->jumlah_barang}}</td>
+              </tr>
+            @empty
+              <tr>
+                <td class="ps-2">• Luas Tanah Padi GOGO Potensi</td>
+                <td>:</td>
+                <td class="ps-1">500 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Luas Tanah Garapan Tahun Ini</td>
+                <td>:</td>
+                <td class="ps-1">150 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Luas Tanah Pertanian Ladang</td>
+                <td>:</td>
+                <td class="ps-1">150 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Lahan Perkebunan Kelapa Sawit</td>
+                <td>:</td>
+                <td class="ps-1">400 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Luas Kebun Lada/Merica</td>
+                <td>:</td>
+                <td class="ps-1">150 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Luas Kebun Kopi</td>
+                <td>:</td>
+                <td class="ps-1">1 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Luas Kebun Kakau</td>
+                <td>:</td>
+                <td class="ps-1">3 Ha</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Jumlah Ayam</td>
+                <td>:</td>
+                <td class="ps-1">1150 Ekor</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Jumlah Bebek</td>
+                <td>:</td>
+                <td class="ps-1">50 Ekor</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Jumlah Kambing</td>
+                <td>:</td>
+                <td class="ps-1">10 Ekor</td>
+              </tr>
+              <tr>
+                <td class="ps-2">• Jumlah Sapi</td>
+                <td>:</td>
+                <td class="ps-1">20 Ekor/td>
+              </tr>
+            @endforelse
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-
-{{-- STATISTIK DESA --}}
-{{-- Card Count --}}
-<h5 class="mt-4 mb-2">Statistik Kampung Biatan Bapinang</h5>
-<div class="row mb-sm-4">
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Warga</p>
-              <h5 class="font-weight-bolder">
-               716 Jiwa
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-users text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Total KK</p>
-              <h5 class="font-weight-bolder">
-               209 KK
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-file text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Laki-Laki</p>
-              <h5 class="font-weight-bolder">
-               381 Jiwa
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-male text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Perempuan</p>
-              <h5 class="font-weight-bolder">
-               335 Jiwa
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-female text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-12 mb-lg-0">
-    <div class="card h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Penduduk Berdasarkan Usia</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="bar-chart" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row mt-4">
-  <div class="col-lg-6 mb-lg-0 mb-4">
-    <div class="card  h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Pendudukan Berdasarkan Suku Bangsa</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="pie-chart" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-6 mb-lg-0">
-    <div class="card  h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Pendudukan Berdasarkan Agama</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="pie-chart2" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row mt-4">
-  <div class="col-lg-12 mb-lg-0 mb-4">
-    <div class="card h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Penduduk Berdasarkan Tingkat Pendidikan</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="bar-chart2" class="chart-canvas" height="300"></canvas>
-        </div>
-        <p class="text-xs ps-1 mb-0 font-weight-bold">Keterangan</p>
-        <div class="row">
-          <div class="col-lg-4 mb-lg-0 mb-4">
-            <ul class="mb-0">
-              <li class="text-xs">PSD(Pelajar Sekolah SD)</li>
-              <li class="text-xs">TSD(Tamat SD)</li>
-              <li class="text-xs">TTSD(Tidak Tamat SD)</li>
-              <li class="text-xs">PSMP(Pelajar SMP)</li>
-              <li class="text-xs">TSMP(Tamat SMP)</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-lg-0 mb-4">
-            <ul class="mb-0">
-              <li class="text-xs">TTSMP(Tidak Tamat SMP)</li>
-              <li class="text-xs">PSMU(Pelajar SMU)</li>
-              <li class="text-xs">TSMU(Tamat SMU)</li>
-              <li class="text-xs">TTSMU(Tidak Tamat SMU)</li>
-              <li class="text-xs">M(Mahasiswa)</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-lg-0 mb-4">
-            <ul class="mb-0">
-              <li class="text-xs">D(Diploma)</li>
-              <li class="text-xs">S(Sarjana)</li>
-              <li class="text-xs">Mg/Dr(Magister/Doktor)</li>
-              <li class="text-xs">TTK(Tidak Tamat Kuliah)</li>
-              <li class="text-xs">TPS(Tidak Pernah Sekolah)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row mt-4">
-  <div class="col-lg-12 mb-lg-0">
-    <div class="card h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Penduduk Berdasarkan Pekerjaan</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="bar-chart3" class="chart-canvas" height="300"></canvas>
-        </div>
-        <p class="text-xs ps-1 mb-0 font-weight-bold">Keterangan</p>
-        <div class="row">
-          <div class="col-lg-4 mb-lg-0 mb-4">
-            <ul class="mb-0">
-              <li class="text-xs">SKTS(Sebelum Kerja, Tidak Sekolah)</li>
-              <li class="text-xs">PSD(Pelajar SD)</li>
-              <li class="text-xs">USDTS(Usia SD Tidak Sekolah)</li>
-              <li class="text-xs">PSM(Pelajar SD)</li>
-              <li class="text-xs">USMPTS(Usia SMP Tidak Sekolah)</li>
-              <li class="text-xs">PSMU(Pelajar SMU)</li>
-              <li class="text-xs">USMUTS(Usia SMU Tidak Sekolah)</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-lg-0 mb-4">
-            <ul class="mb-0">
-              <li class="text-xs">M(Mahasiswa)</li>
-              <li class="text-xs">PKeb(Petani Kebun)</li>
-              <li class="text-xs">Nel(Nelayana)</li>
-              <li class="text-xs">Tkay(Tukang Kayu)</li>
-              <li class="text-xs">B(Buruh)</li>
-              <li class="text-xs">P(Pengusaha)</li>
-              <li class="text-xs">AKamp(Aparat Kampung)</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-lg-0 mb-4">
-            <ul class="mb-0">
-              <li class="text-xs">IRT(Ibu Rumah Tangga)</li>
-              <li class="text-xs">KSwa(Karyawan Swasta)</li>
-              <li class="text-xs">PGu(PNS Guru)</li>
-              <li class="text-xs">Pdt(Pendeta)</li>
-              <li class="text-xs">Hon(Honorer)</li>
-              <li class="text-xs">PL(Pekerjaan Lain)</li>
-              <li class="text-xs">TBM(Tidak Bekerja Manual)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-{{-- Card Count --}}
-{{-- <h5 class="mt-4 mb-2">Statistik User Web Biatan Bapinang</h5>
-<div class="row mb-sm-4">
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Warga</p>
-              <h5 class="font-weight-bolder">
-               {{$total_warga->ktp}}
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-users text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Total KK</p>
-              <h5 class="font-weight-bolder">
-               {{$total_warga->domisili}}
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-file text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Laki-Laki</p>
-              <h5 class="font-weight-bolder">
-               {{$kelamin->laki}}
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-male text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-    <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Perempuan</p>
-              <h5 class="font-weight-bolder">
-               {{$kelamin->perempuan}}
-              </h5>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="fas fa-female text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-4 mb-lg-0 mb-4">
-    <div class="card  h-100">
-      <div class="px-3">
-
-      </div>
-      <div class="px-3">
-        <button class="btn btn-sm btn-warning btn-icon btn-3 mt-3 mb-sm-0" data-bs-toggle="modal" data-bs-target="#modal-form">
-          <span class="btn-inner--text">Tambah</span>
-        </button>
-        <a href="{{route('officer.chart_edit_page')}}" class="btn text-white btn-sm btn-warning btn-icon btn-3 mt-3 mb-sm-0 text-decoration-none">
-          <span class="btn-inner--text">Edit Data</span>
-        </a>
-      </div>
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Penduduk Berdasarkan RT</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="bar-chart" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-        <div class="modal-content">
-          <div class="modal-body p-0">
-            <div class="card card-plain">
-              <div class="card-header pb-0 text-left">
-                <h3 class="font-weight-bolder text-info text-gradient">Tambah Data Chart</h3>
-              </div>
-              <div class="card-body">
-                <form role="form text-left" action="{{route('officer.chart_add')}}" method="POST">
-                  @csrf
-                  <label>Jumlah Warga</label>
-                  <div class="input-group mb-3">
-                    <input type="text" name="jumlahWarga" id="jumlahWarga" class="form-control" placeholder="Jumlah Warga" >
-                  </div>
-                  <label>Jumlah Kepala Keluarga</label>
-                  <div class="input-group mb-3">
-                    <input type="text" name="jumlahKepalaKeluarga" id="jumlahKepalaKeluarga" class="form-control" placeholder="Jumlah Kepala Keluarga" >
-                  </div>
-                  <label>RT</label>
-                  <div class="input-group mb-3">
-                    <input type="text" name="rt" id="rt" class="form-control" placeholder="RT" >
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-lg w-100 mt-4 mb-0">Tambah</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 mb-lg-0 mb-4">
-    <div class="card  h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Pendudukan Berdasarkan Tingkat Pendidikan</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="pie-chart" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 mb-lg-0 mb-4">
-    <div class="card  h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize mb-0">Jumlah Pendudukan Berdasarkan Mata Pencaharian</h6>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="pie-chart2" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> --}}
 @endsection
 
 @push('style_ol')
@@ -1460,286 +1041,4 @@ Profil Kampung
     margin-top: 2rem;
   }
 </style>
-@endpush
-
-@push('chart')
-{{-- Chart Bar Data Warga Berdasarkan Umur --}}
-<script>
-  var ctx = document.getElementById("bar-chart").getContext("2d");
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: ['<5 Tahun','5-12 Tahun','12-18 Tahun','18-45 Tahun','45-60 Tahun','>60 Tahun'],
-      datasets: [
-        {
-          label: "Laki-Laki",
-          weight: 5,
-          borderWidth: 0,
-          borderRadius: 4,
-          backgroundColor: 'rgba(54, 162, 235)',
-          data: [43,42,44,179,44,28],
-          fill: false,
-          maxBarThickness: 35
-        }, {
-          label: "Perempuan",
-          weight: 5,
-          borderWidth: 0,
-          borderRadius: 4,
-          backgroundColor: 'rgba(255, 99, 132)',
-          data: [44,47,33,147,37,28],
-          fill: false,
-          maxBarThickness: 35
-        },
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: true
-        }
-      },
-      scales: {
-        y: {
-          grid: {
-            drawBorder: false,
-            display: true,
-            drawOnChartArea: true,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            padding: 10,
-            color: "#9ca2b7"
-          }
-        },
-        x: {
-          grid: {
-            drawBorder: false,
-            display: false,
-            drawOnChartArea: true,
-            drawTicks: true
-          },
-          ticks: {
-            display: true,
-            color: "#9ca2b7",
-            padding: 10
-          }
-        }
-      }
-    }
-  });
-</script>
-{{-- Chart Pie Data Warga Berdasarkan Suku Bangsa --}}
-<script>
-  const ctx2 = document.getElementById('pie-chart').getContext("2d");
-  new Chart(ctx2, {
-    type: 'pie',
-    data: {
-      labels: ['Berau','Banjar','Dayak','Bugis','Jawa','Timor','Batak','Sunda','Bali','NTB'],
-      datasets: [{
-        data: [24,9,223,402,33,5,4,5,10,1],
-        backgroundColor: [
-          '#006ba6',
-          '#0281d3',
-          '#0496ff',
-          '#d81159',
-          '#f69248',
-          '#82a9a1',
-          '#ffbc42',
-          '#ec674e',
-          '#b41f58',
-          '#8f2d56',
-        ],
-        hoverOffset: 4
-        },
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: true
-        }
-      },
-    }
-  });
-</script>
-{{-- Chart Pie Data Warga Berdasarkan Agama --}}
-<script>
-  const ctx3 = document.getElementById('pie-chart2').getContext("2d");
-  new Chart(ctx3, {
-    type: 'pie',
-    data: {
-      labels: ['Islam','Kristen','Khatolik','Budha','Hindu','Lainnya',],
-      datasets: [{
-        data: [510,196,4,0,6,0],
-        backgroundColor: [
-          '#006ba6',
-          '#0281d3',
-          '#0496ff',
-          '#d81159',
-          '#f69248',
-          '#82a9a1',
-          '#ffbc42',
-          '#ec674e',
-          '#b41f58',
-          '#8f2d56',
-        ],
-        hoverOffset: 4
-        },
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: true
-        }
-      },
-    }
-  });
-</script>
-{{-- Chart Bar Data Warga Berdasarkan Pendidikan --}}
-<script>
-  var ctx4 = document.getElementById("bar-chart2").getContext("2d");
-  new Chart(ctx4, {
-    type: "bar",
-    data: {
-      labels: ['Balita','PSD','TSD','TTSD','PSMP','TSMP','TTSMP','PSMU','TSMU','TTSMU','M','D','S','Dr','TTK','TPS'],
-      datasets: [
-        {
-          label: "Laki-Laki",
-          weight: 5,
-          borderWidth: 0,
-          borderRadius: 4,
-          backgroundColor: 'rgba(54, 162, 235)',
-          data: [43,25,132,45,3,30,4,4,48,2,4,5,9,0,0,18],
-          fill: false,
-          maxBarThickness: 35
-        }, {
-          label: "Perempuan",
-          weight: 5,
-          borderWidth: 0,
-          borderRadius: 4,
-          backgroundColor: 'rgba(255, 99, 132)',
-          data: [44,34,122,50,5,31,3,8,31,1,1,2,6,0,0,6],
-          fill: false,
-          maxBarThickness: 35
-        },
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: true
-        }
-      },
-      scales: {
-        y: {
-          grid: {
-            drawBorder: false,
-            display: true,
-            drawOnChartArea: true,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            padding: 10,
-            color: "#9ca2b7"
-          }
-        },
-        x: {
-          grid: {
-            drawBorder: false,
-            display: false,
-            drawOnChartArea: true,
-            drawTicks: true
-          },
-          ticks: {
-            display: true,
-            color: "#9ca2b7",
-            padding: 10
-          }
-        }
-      }
-    }
-  });
-</script>
-{{-- Chart Bar Data Warga Berdasarkan Pendidikan --}}
-<script>
-  var ctx5 = document.getElementById("bar-chart3").getContext("2d");
-  new Chart(ctx5, {
-    type: "bar",
-    data: {
-      labels: ['SKTS','PSD','USDTS','PSMP','USMPTS','PSMU','USMUTS','M','PKeb','Nel','TKay','B','P','AKamp','IRT','KSwa','PGu','Pdt','Dai','Hon','PL','TBK'],
-      datasets: [
-        {
-          label: "Laki-Laki",
-          weight: 5,
-          borderWidth: 0,
-          borderRadius: 4,
-          backgroundColor: 'rgba(54, 162, 235)',
-          data: [28,11,6,3,1,4,2,4,300,0,0,15,0,3,0,27,3,0,1,9,37,0],
-          fill: false,
-          maxBarThickness: 35
-        }, {
-          label: "Perempuan",
-          weight: 5,
-          borderWidth: 0,
-          borderRadius: 4,
-          backgroundColor: 'rgba(255, 99, 132)',
-          data: [34,18,9,5,1,8,0,1,50,0,0,5,0,3,180,16,0,0,0,8,30],
-          fill: false,
-          maxBarThickness: 35
-        },
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: true
-        }
-      },
-      scales: {
-        y: {
-          grid: {
-            drawBorder: false,
-            display: true,
-            drawOnChartArea: true,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            padding: 10,
-            color: "#9ca2b7"
-          }
-        },
-        x: {
-          grid: {
-            drawBorder: false,
-            display: false,
-            drawOnChartArea: true,
-            drawTicks: true
-          },
-          ticks: {
-            display: true,
-            color: "#9ca2b7",
-            padding: 10
-          }
-        }
-      }
-    }
-  });
-</script>
 @endpush

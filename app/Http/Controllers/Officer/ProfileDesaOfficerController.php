@@ -4,69 +4,32 @@ namespace App\Http\Controllers\Officer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\ChartBar;
+use App\Models\LetakGeografisModel;
+use App\Models\ProfileKampungModel;
+use App\Models\SaranaPrasaranaModel;
+use App\Models\StrukturOrganisasiModel;
 use App\Models\SettingModel;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class ProfileDesaOfficerController extends Controller
 {
   public function index()
   {
-    $setprofile = SettingModel::select('id', 'img_desa', 'sejarah_kampung', 'video_desa')->first();
+    $profil = ProfileKampungModel::first();
+    $struktur = StrukturOrganisasiModel::all()->where('divisi', 'pengurus_pusat')->where('sub_divisi', 'Ketua Kampung');
+    $geografis = LetakGeografisModel::select('batas_wilayah', 'keterangan_batas')->get();
+    $orbitasi = LetakGeografisModel::select('orbitasi', 'keterangan_orbitasi')->get();
+    $sarana_jalan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'akses');
+    $sarana_kesehatan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'kesehatan');
+    $sarana_pendidikan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'pendidikan');
+    $sarana_pertanian = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'pertanian_perternakan');
+    $sarana_umum = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'fasilitas_umum');
 
-    $charts = ChartBar::all();
+    $sarana_jalan_id = SaranaPrasaranaModel::where('jenis_fasilitas', 'akses')->first();
 
-    $total_kk = User::distinct()->count('kk');
-    $total_warga = User::selectRaw("COUNT(CASE WHEN desa_ktp = 6405110001  THEN 1 END) AS ktp")
-    ->selectRaw("COUNT(CASE WHEN desa_domisili = 6405110001 THEN 1 END) AS domisili")
-    ->first();
-
-    $kelamin = User::selectRaw("COUNT(CASE WHEN kelamin = 'Laki-Laki'  THEN 1 END) AS laki")
-    ->selectRaw("COUNT(CASE WHEN kelamin = 'Perempuan'  THEN 1 END) AS perempuan")
-    ->first();
-
-    $countpendidikan = User::selectRaw("COUNT(CASE WHEN pendidikan = 'SD'  THEN 1 END) AS sd")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'SMP' THEN 1 END) AS smp")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'SMA' THEN 1 END) AS sma")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'D1'  THEN 1 END) AS d1")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'D2'  THEN 1 END) AS d2")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'D3'  THEN 1 END) AS d3")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'D4'  THEN 1 END) AS d4")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'S1'  THEN 1 END) AS s1")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'S2'  THEN 1 END) AS s2")
-      ->selectRaw("COUNT(CASE WHEN pendidikan = 'S3'  THEN 1 END) AS s3")
-      ->first();
-
-    $sd[] = $countpendidikan->sd;
-    $smp[] = $countpendidikan->smp;
-    $sma[] = $countpendidikan->sma;
-    $d1[] = $countpendidikan->d1;
-    $d2[] = $countpendidikan->d2;
-    $d3[] = $countpendidikan->d3;
-    $d4[] = $countpendidikan->d4;
-    $s1[] = $countpendidikan->s1;
-    $s2[] = $countpendidikan->s2;
-    $s3[] = $countpendidikan->s3;
-
-    $rt = [];
-    $jmlwarga = [];
-    $jmlkepala = [];
-
-    foreach($charts as $row) {
-      $rt[] = $row->rt;
-      $jmlwarga[] = $row->jumlahWarga;
-      $jmlkepala[] = $row->jumlahKepalaKeluarga;
-    }
-
-    return
-    view('officer.pages.profiledesa.profiledesa',
-      compact('setprofile','rt','total_warga','total_kk','kelamin','sd','smp','sma','d1','d2','d3','d4','s1','s2','s3','jmlwarga','jmlkepala')
-    );
-  }
-  public function create()
-  {
-      //
+    return view('officer.pages.profiledesa.profiledesa', compact('profil','struktur','geografis','orbitasi','sarana_jalan','sarana_kesehatan','sarana_pendidikan','sarana_pertanian','sarana_umum','sarana_jalan_id'));
   }
 
   public function store(Request $request)
@@ -85,14 +48,155 @@ class ProfileDesaOfficerController extends Controller
     ]);
   }
 
-  public function show($id)
+  public function storeProfileKampung(Request $request)
   {
-      //
+    $data = new ProfileKampungModel();
+
+    $data->sejarah_kampung = $request->sejarah_kampung;
+    $data->kondisi_ekonomi = $request->kondisi_ekonomi;
+    $data->kondisi_pemerintah = $request->kondisi_pemerintah;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Profil Kampung berhasil Diubah',
+      'status' => 'Profil Kampung berhasil Diubah'
+    ]);
   }
 
-  public function edit($id)
+  public function storeStrukturOrganisasi(Request $request)
   {
+    $data = new StrukturOrganisasiModel();
 
+    $data->tahun_kepengurusan = $request->tahun_kepengurusan;
+    $data->divisi = $request->divisi;
+    $data->divisi_baru = $request->divisi_baru;
+    $data->sub_divisi = $request->sub_divisi;
+    $data->nama_anggota = $request->nama_anggota;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Struktur Organisasi berhasil Diubah',
+      'status' => 'Struktur Organisasi berhasil Diubah'
+    ]);
+  }
+
+  public function storeLetakGeografis(Request $request)
+  {
+    $data = new LetakGeografisModel();
+
+    $data->batas_wilayah = $request->batas_wilayah;
+    $data->keterangan_batas = $request->keterangan_batas;
+    $data->orbitasi = $request->orbitasi;
+    $data->keterangan_orbitasi = $request->keterangan_orbitasi;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Letak Geografis berhasil Diubah',
+      'status' => 'Letak Geografis berhasil Diubah'
+    ]);
+  }
+
+  public function storeOrbitasi(Request $request)
+  {
+    $data = new LetakGeografisModel();
+
+    $data->batas_wilayah = $request->batas_wilayah;
+    $data->keterangan_batas = $request->keterangan_batas;
+    $data->orbitasi = $request->orbitasi;
+    $data->keterangan_orbitasi = $request->keterangan_orbitasi;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Letak Geografis berhasil Diubah',
+      'status' => 'Letak Geografis berhasil Diubah'
+    ]);
+  }
+
+  public function storeSaranaPrasarana(Request $request)
+  {
+    $data = new SaranaPrasaranaModel();
+
+    $data->jenis_fasilitas = $request->jenis_fasilitas;
+    $data->nama_barang = $request->nama_barang;
+    $data->jumlah_barang = $request->jumlah_barang;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Sarana Prasarana berhasil Ditambahkan',
+      'status' => 'Sarana Prasarana berhasil Ditambahkan'
+    ]);
+  }
+
+  public function updateProfileKampung(Request $request, $id)
+  {
+    $data = ProfileKampungModel::findOrFail($id);
+
+    $data->sejarah_kampung = $request->sejarah_kampung;
+    $data->kondisi_ekonomi = $request->kondisi_ekonomi;
+    $data->kondisi_pemerintah = $request->kondisi_pemerintah;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Profil Kampung berhasil Diubah',
+      'status' => 'Profil Kampung berhasil Diubah'
+    ]);
+  }
+
+  public function updateStrukturOrganisasi(Request $request, $id)
+  {
+    $data = StrukturOrganisasiModel::findOrFail($id);
+
+    $data->tahun_kepengurusan = $request->tahun_kepengurusan;
+    $data->divisi = $request->divisi;
+    $data->divisi_baru = $request->divisi_baru;
+    $data->sub_divisi = $request->sub_divisi;
+    $data->nama_anggota = $request->nama_anggota;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Struktur Organisasi berhasil Diubah',
+      'status' => 'Struktur Organisasi berhasil Diubah'
+    ]);
+  }
+
+  public function updateLetakGeografis(Request $request, $id)
+  {
+    $data = LetakGeografisModel::findOrFail($id);
+
+    $data->batas_wilayah = $request->batas_wilayah;
+    $data->keterangan_batas = $request->keterangan_batas;
+    $data->orbitasi = $request->orbitasi;
+    $data->keterangan_orbitasi = $request->keterangan_orbitasi;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Letak Geografis berhasil Diubah',
+      'status' => 'Letak Geografis berhasil Diubah'
+    ]);
+  }
+
+  public function updateSaranaPrasarana(Request $request, $id)
+  {
+    $data = SaranaPrasaranaModel::findOrFail($id);
+
+    $data->jenis_fasilitas = $request->jenis_fasilitas;
+    $data->nama_barang = $request->nama_barang;
+    $data->jumlah_barang = $request->jumlah_barang;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Sarana Prasarana berhasil Diubah',
+      'status' => 'Sarana Prasarana berhasil Diubah'
+    ]);
   }
 
   public function update(Request $request, $id)
