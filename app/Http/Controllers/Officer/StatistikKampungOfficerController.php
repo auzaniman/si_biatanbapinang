@@ -60,4 +60,58 @@ class StatistikKampungOfficerController extends Controller
       compact('rt','total_warga','total_kk','kelamin','sd','smp','sma','d1','d2','d3','d4','s1','s2','s3','jmlwarga','jmlkepala')
     );
   }
+
+  public function store(Request $request)
+  {
+    $chartbar = new ChartBar([
+      'jumlahWarga' => $request->get('jumlahWarga'),
+      'jumlahKepalaKeluarga' => $request->get('jumlahKepalaKeluarga'),
+      'rt' => $request->get('rt'),
+    ]);
+    $chartbar->save();
+
+    return redirect()->back()
+    ->with([
+        'message' => 'berhasil ditambahkan',
+        'status' => 'Sukses! Data chart berhasil ditambahkan'
+    ]);
+  }
+
+  public function update(Request $request, $id)
+  {
+    ChartBar::where('id', $id)
+      ->update([
+        'jumlahWarga' => $request->jumlahWarga,
+        'jumlahKepalaKeluarga' => $request->jumlahKepalaKeluarga,
+        'rt' => $request->rt,
+      ]);
+
+    return redirect()->back()
+    ->with([
+        'message' => 'berhasil diubah',
+        'status' => 'Data chart berhasil diubah'
+    ]);
+    // return $request;
+  }
+
+  public function destroy($id)
+  {
+    $chart = ChartBar::where('id', $id)->first();
+    $chart->delete();
+
+    return redirect()->back()
+    ->with([
+        'message' => 'berhasil dihapus',
+        'status' => 'Data chart berhasil dihapus'
+    ]);
+
+  }
+
+  public function index_edit()
+    {
+      $charts = ChartBar::all();
+      return view('officer.pages.profiledesa.chart.edit', [
+        'charts' => $charts
+      ]);
+    }
 }

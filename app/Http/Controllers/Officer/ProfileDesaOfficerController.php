@@ -4,14 +4,11 @@ namespace App\Http\Controllers\Officer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ChartBar;
 use App\Models\LetakGeografisModel;
+use App\Models\OrbitasiModel;
 use App\Models\ProfileKampungModel;
 use App\Models\SaranaPrasaranaModel;
 use App\Models\StrukturOrganisasiModel;
-use App\Models\SettingModel;
-use Illuminate\Support\Facades\DB;
-use App\Models\User;
 
 class ProfileDesaOfficerController extends Controller
 {
@@ -19,8 +16,10 @@ class ProfileDesaOfficerController extends Controller
   {
     $profil = ProfileKampungModel::first();
     $struktur = StrukturOrganisasiModel::all()->where('divisi', 'pengurus_pusat')->where('sub_divisi', 'Ketua Kampung');
-    $geografis = LetakGeografisModel::select('batas_wilayah', 'keterangan_batas')->get();
-    $orbitasi = LetakGeografisModel::select('orbitasi', 'keterangan_orbitasi')->get();
+
+    $geografis = LetakGeografisModel::first();
+    $orbitasi = OrbitasiModel::first();
+
     $sarana_jalan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'akses');
     $sarana_kesehatan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'kesehatan');
     $sarana_pendidikan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'pendidikan');
@@ -29,23 +28,9 @@ class ProfileDesaOfficerController extends Controller
 
     $sarana_jalan_id = SaranaPrasaranaModel::where('jenis_fasilitas', 'akses')->first();
 
-    return view('officer.pages.profiledesa.profiledesa', compact('profil','struktur','geografis','orbitasi','sarana_jalan','sarana_kesehatan','sarana_pendidikan','sarana_pertanian','sarana_umum','sarana_jalan_id'));
-  }
-
-  public function store(Request $request)
-  {
-    $chartbar = new ChartBar([
-      'jumlahWarga' => $request->get('jumlahWarga'),
-      'jumlahKepalaKeluarga' => $request->get('jumlahKepalaKeluarga'),
-      'rt' => $request->get('rt'),
-    ]);
-    $chartbar->save();
-
-    return redirect()->back()
-    ->with([
-        'message' => 'berhasil ditambahkan',
-        'status' => 'Sukses! Data chart berhasil ditambahkan'
-    ]);
+    return view('officer.pages.profiledesa.profiledesa',
+      compact('profil','struktur','geografis','orbitasi','sarana_jalan','sarana_kesehatan','sarana_pendidikan','sarana_pertanian','sarana_umum','sarana_jalan_id')
+    );
   }
 
   public function storeProfileKampung(Request $request)
@@ -86,10 +71,10 @@ class ProfileDesaOfficerController extends Controller
   {
     $data = new LetakGeografisModel();
 
-    $data->batas_wilayah = $request->batas_wilayah;
-    $data->keterangan_batas = $request->keterangan_batas;
-    $data->orbitasi = $request->orbitasi;
-    $data->keterangan_orbitasi = $request->keterangan_orbitasi;
+    $data->sebelah_utara = $request->sebelah_utara;
+    $data->sebelah_timur = $request->sebelah_timur;
+    $data->sebelah_barat = $request->sebelah_barat;
+    $data->sebelah_selatan = $request->sebelah_selatan;
 
     $data->save();
 
@@ -101,18 +86,20 @@ class ProfileDesaOfficerController extends Controller
 
   public function storeOrbitasi(Request $request)
   {
-    $data = new LetakGeografisModel();
+    $data = new OrbitasiModel();
 
-    $data->batas_wilayah = $request->batas_wilayah;
-    $data->keterangan_batas = $request->keterangan_batas;
-    $data->orbitasi = $request->orbitasi;
-    $data->keterangan_orbitasi = $request->keterangan_orbitasi;
+    $data->jarak_ke_kecamatan = $request->jarak_ke_kecamatan;
+    $data->waktu_ke_kecamatan = $request->waktu_ke_kecamatan;
+    $data->kendaraan_ke_kecamatan = $request->kendaraan_ke_kecamatan;
+    $data->jarak_ke_kabupaten = $request->jarak_ke_kabupaten;
+    $data->waktu_ke_kabupaten = $request->waktu_ke_kabupaten;
+    $data->kendaraan_ke_kabupaten = $request->kendaraan_ke_kabupaten;
 
     $data->save();
 
     return redirect()->back()->with([
-      'message' => 'Letak Geografis berhasil Diubah',
-      'status' => 'Letak Geografis berhasil Diubah'
+      'message' => 'Orbitasi berhasil Diubah',
+      'status' => 'Orbitasi berhasil Diubah'
     ]);
   }
 
@@ -170,16 +157,34 @@ class ProfileDesaOfficerController extends Controller
   {
     $data = LetakGeografisModel::findOrFail($id);
 
-    $data->batas_wilayah = $request->batas_wilayah;
-    $data->keterangan_batas = $request->keterangan_batas;
-    $data->orbitasi = $request->orbitasi;
-    $data->keterangan_orbitasi = $request->keterangan_orbitasi;
+    $data->sebelah_utara = $request->sebelah_utara;
+    $data->sebelah_timur = $request->sebelah_timur;
+    $data->sebelah_barat = $request->sebelah_barat;
+    $data->sebelah_selatan = $request->sebelah_selatan;
 
     $data->save();
 
     return redirect()->back()->with([
       'message' => 'Letak Geografis berhasil Diubah',
       'status' => 'Letak Geografis berhasil Diubah'
+    ]);
+  }
+  public function updateOrbitasi(Request $request, $id)
+  {
+    $data = OrbitasiModel::findOrFail($id);
+
+    $data->jarak_ke_kecamatan = $request->jarak_ke_kecamatan;
+    $data->waktu_ke_kecamatan = $request->waktu_ke_kecamatan;
+    $data->kendaraan_ke_kecamatan = $request->kendaraan_ke_kecamatan;
+    $data->jarak_ke_kabupaten = $request->jarak_ke_kabupaten;
+    $data->waktu_ke_kabupaten = $request->waktu_ke_kabupaten;
+    $data->kendaraan_ke_kabupaten = $request->kendaraan_ke_kabupaten;
+
+    $data->save();
+
+    return redirect()->back()->with([
+      'message' => 'Orbitasi berhasil Diubah',
+      'status' => 'Orbitasi berhasil Diubah'
     ]);
   }
 
@@ -198,42 +203,4 @@ class ProfileDesaOfficerController extends Controller
       'status' => 'Sarana Prasarana berhasil Diubah'
     ]);
   }
-
-  public function update(Request $request, $id)
-  {
-    ChartBar::where('id', $id)
-      ->update([
-        'jumlahWarga' => $request->jumlahWarga,
-        'jumlahKepalaKeluarga' => $request->jumlahKepalaKeluarga,
-        'rt' => $request->rt,
-      ]);
-
-    return redirect()->back()
-    ->with([
-        'message' => 'berhasil diubah',
-        'status' => 'Data chart berhasil diubah'
-    ]);
-    // return $request;
-  }
-
-  public function destroy($id)
-  {
-    $chart = ChartBar::where('id', $id)->first();
-    $chart->delete();
-
-    return redirect()->back()
-    ->with([
-        'message' => 'berhasil dihapus',
-        'status' => 'Data chart berhasil dihapus'
-    ]);
-
-  }
-
-  public function index_edit()
-    {
-      $charts = ChartBar::all();
-      return view('officer.pages.profiledesa.chart.edit', [
-        'charts' => $charts
-      ]);
-    }
 }

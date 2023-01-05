@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class LetakGeografisModel extends Model
+class OrbitasiModel extends Model
 {
   use HasFactory;
   use SoftDeletes;
 
-  protected $table = "letak_geografis";
+  protected $table = "orbitasi";
 
   protected $fillable = [
-    'sebelah_utara',
-    'sebelah_timur',
-    'sebelah_barat',
-    'sebelah_selatan',
+    'jarak_ke_kecamatan',
+    'waktu_ke_kecamatan',
+    'kendaraan_ke_kecamatan',
+    'jarak_ke_kabupaten',
+    'waktu_ke_kabupaten',
+    'kendaraan_ke_kabupaten',
   ];
 }

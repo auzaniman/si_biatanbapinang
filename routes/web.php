@@ -82,11 +82,13 @@ Route::middleware(["officer"])
   Route::post('/profile_kampung', [ProfileDesaOfficerController::class, "storeProfileKampung"])->name("profile_kampung");
   Route::post('/struktur', [ProfileDesaOfficerController::class, "storeStrukturOrganisasi"])->name("struktur");
   Route::post('/letak_geografis', [ProfileDesaOfficerController::class, "storeLetakGeografis"])->name("letak_geografis");
+  Route::post('/orbitasi', [ProfileDesaOfficerController::class, "storeOrbitasi"])->name("orbitasi");
   Route::post('/sarana_prasarana', [ProfileDesaOfficerController::class, "storeSaranaPrasarana"])->name("sarana_prasarana");
 
   Route::put('/edit_profile_kampung/{id}', [ProfileDesaOfficerController::class, "updateProfileKampung"])->name("edit_profile_kampung");
   Route::put('/edit_struktur/{id}', [ProfileDesaOfficerController::class, "updateStrukturOrganisasi"])->name("edit_struktur");
   Route::put('/edit_letak_geografis/{id}', [ProfileDesaOfficerController::class, "updateLetakGeografis"])->name("edit_letak_geografis");
+  Route::put('/edit_orbitasi/{id}', [ProfileDesaOfficerController::class, "updateOrbitasi"])->name("edit_orbitasi");
   Route::put('/edit_sarana_prasarana/{id}', [ProfileDesaOfficerController::class, "updateSaranaPrasarana"])->name("edit_sarana_prasarana");
 
   Route::post('/chart_add', [ProfileDesaOfficerController::class, "store"])->name("chart_add");

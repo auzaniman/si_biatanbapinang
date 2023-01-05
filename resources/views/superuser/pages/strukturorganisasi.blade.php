@@ -66,30 +66,30 @@ Struktur Kampung
                   <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
                 </tr>
               @empty
-              <tr>
-                <td class="align-middle text-sm">Kepala BPK</td>
-                <td class="align-middle text-sm">:</td>
-                <td class="align-middle text-sm">Cupin Yusak</td>
-              </tr>
-              <tr>
-                <td class="align-middle text-sm">Wakil Ketua</td>
-                <td class="align-middle text-sm">:</td>
-                <td class="align-middle text-sm">Sukarman</td>
-              </tr>
-              <tr>
-                <td class="align-middle text-sm">Sekretsris</td>
-                <td class="align-middle text-sm">:</td>
-                <td class="align-middle text-sm">Sabar</td>
-              </tr>
-              <tr>
-                <td class="align-middle text-sm">Anggota</td>
-                <td class="align-middle text-sm">:</td>
-                <td class="align-middle text-sm">
-                  Evi Septi Miri Dewi
-                  <br>
-                  Marlinda Klaberi
-                </td>
-              </tr>
+                <tr>
+                  <td class="align-middle text-sm">Kepala BPK</td>
+                  <td class="align-middle text-sm">:</td>
+                  <td class="align-middle text-sm">Cupin Yusak</td>
+                </tr>
+                <tr>
+                  <td class="align-middle text-sm">Wakil Ketua</td>
+                  <td class="align-middle text-sm">:</td>
+                  <td class="align-middle text-sm">Sukarman</td>
+                </tr>
+                <tr>
+                  <td class="align-middle text-sm">Sekretsris</td>
+                  <td class="align-middle text-sm">:</td>
+                  <td class="align-middle text-sm">Sabar</td>
+                </tr>
+                <tr>
+                  <td class="align-middle text-sm">Anggota</td>
+                  <td class="align-middle text-sm">:</td>
+                  <td class="align-middle text-sm">
+                    Evi Septi Miri Dewi
+                    <br>
+                    Marlinda Klaberi
+                  </td>
+                </tr>
               @endforelse
             </tbody>
           </table>

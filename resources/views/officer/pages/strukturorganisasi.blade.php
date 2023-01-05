@@ -139,11 +139,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($pusat as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'pengurus_pusat')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
                 <tr>
                   <td class="align-middle text-sm">Kepala Kampung</td>
@@ -182,11 +184,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($bpk as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'bpk')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Kepala BPK</td>
@@ -231,11 +235,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($lpm as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'lpm')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Kepala LPM</td>
@@ -304,11 +310,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($posyandu as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'posyandu')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Ketua</td>
@@ -359,11 +367,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($kartar as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'karang_taruna')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Ketua</td>
@@ -416,11 +426,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($kelsawi as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'kelompok_sadar_wisata')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Ketua</td>
@@ -482,11 +494,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($pusat as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'ketua_rt')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Ketua RT 01</td>
@@ -515,11 +529,13 @@ Struktur Kampung
         <div class="table-responsive">
           <table class="table-borderless align-items-center mb-2">
             <tbody>
-              @forelse ($pkk as $item)
-                <tr>
-                  <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
-                  <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
-                </tr>
+              @forelse ($struktur as $item)
+                @if ($item->divisi == 'pkk')
+                  <tr>
+                    <td class="align-middle text-sm">{{$item->sub_divisi}}</td>
+                    <td class="align-middle text-sm">: {{$item->nama_anggota}}</td>
+                  </tr>
+                @endif
               @empty
               <tr>
                 <td class="align-middle text-sm">Ketua</td>

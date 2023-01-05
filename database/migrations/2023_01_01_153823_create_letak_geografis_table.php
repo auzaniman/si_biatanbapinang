@@ -14,13 +14,13 @@ class CreateLetakGeografisTable extends Migration
     public function up()
     {
         Schema::create('letak_geografis', function (Blueprint $table) {
-            $table->id();
-            $table->string('batas_wilayah')->nullable();
-            $table->string('keterangan_batas')->nullable();
-            $table->string('orbitasi')->nullable();
-            $table->string('keterangan_orbitasi')->nullable();
-            $table->softDeletes();
-            $table->timestamps();
+          $table->id();
+          $table->string('sebelah_utara')->nullable();
+          $table->string('sebelah_timur')->nullable();
+          $table->string('sebelah_barat')->nullable();
+          $table->string('sebelah_selatan')->nullable();
+          $table->softDeletes();
+          $table->timestamps();
         });
     }
 
