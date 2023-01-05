@@ -1,4 +1,4 @@
-@extends('superuser.layouts.app')
+@extends('officer.layouts.app')
 
 @section('title')
 Profil Kampung
@@ -27,13 +27,13 @@ Profil Kampung
 </div>
 
 {{-- Video dan Deskripsi --}}
-@include('superuser.pages.profiledesa.components.profile')
+@include('officer.pages.profiledesa.components.profile')
 
 {{-- Letak Geografis --}}
-@include('superuser.pages.profiledesa.components.geografis')
+@include('officer.pages.profiledesa.components.geografis')
 
 {{-- Sarana Prasarana --}}
-@include('superuser.pages.profiledesa.components.sarana')
+@include('officer.pages.profiledesa.components.sarana')
 
 @endsection
 

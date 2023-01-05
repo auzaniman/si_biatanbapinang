@@ -2,10 +2,6 @@
   <div class="card-body pt-3 bg-transparent">
     <div class="d-flex justify-content-between">
       <i class="fa text-warning fa-briefcase" aria-hidden="true"></i>
-      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form5" class="btn badge bg-gradient-primary ms-auto">
-        <i class="fa fa-plus me-1" aria-hidden="true"></i>
-        Tambah
-      </button>
     </div>
     <h5>Sarana Prasarana Kampung</h5>
     <div class="row mt-4">
@@ -376,47 +372,4 @@
     </div>
   </div>
 </div>
-
-{{-- Modal --}}
-<div class="modal fade" id="modal-form5" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="card card-plain">
-          <div class="card-header pb-0 text-left">
-            <h4 class="font-weight-bolder text-info text-gradient">Sarana Prasarana</h4>
-          </div>
-          <div class="card-body pt-0">
-            <form role="form text-left" action="{{route('officer.sarana_prasarana')}}" method="POST">
-              @csrf
-              <label>Jenis Fasilitas Sarana Prasarana</label>
-              <div class="input-group mb-3">
-                <select class="form-control me-3 @error('verifikasi') is-invalid @enderror" id="jenis_fasilitas" name="jenis_fasilitas">
-                  <option data-display="Pilih Batas Wilayah">-</option>
-                  <option value="akses">Aksesbilitas/Jalan</option>
-                  <option value="pendidikan">Pendidikan</option>
-                  <option value="kesehatan">Kesehatan</option>
-                  <option value="pertanian_perternakan">Pertanian/Perternakan</option>
-                  <option value="fasilitas_umum">Fasilitas Umum</option>
-                </select>
-              </div>
-              <label>Nama Barang</label>
-              <div class="input-group mb-3">
-                <input type="text" name="nama_barang" id="nama_barang" class="form-control">
-              </div>
-              <label>Jumlah Barang</label>
-              <div class="input-group mb-3">
-                <input type="text" name="jumlah_barang" id="jumlah_barang" class="form-control">
-              </div>
-              <div class="text-end">
-                <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- End Modal --}}
 

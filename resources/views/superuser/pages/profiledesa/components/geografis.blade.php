@@ -12,12 +12,6 @@
             <ol class="ps-3">
               <div class="d-flex justify-content-between">
                 <li class="font-weight-bold">Batas-batas wilayah sebagai berikut:</li>
-                <div>
-                  <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form4" class="btn badge bg-gradient-primary ms-auto mb-0">
-                    <i class="fa fa-plus me-1" aria-hidden="true"></i>
-                    Edit
-                  </button>
-                </div>
               </div>
               <table class="table-borderless">
                 <tbody>
@@ -72,12 +66,6 @@
             <ol start="2">
               <div class="d-flex justify-content-between">
                 <li class="font-weight-bold">Orbitasi:</li>
-                <div>
-                  <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form7" class="btn badge bg-gradient-primary ms-auto mb-0">
-                    <i class="fa fa-plus me-1" aria-hidden="true"></i>
-                    Edit
-                  </button>
-                </div>
               </div>
               <table class="table-borderless">
                 <tbody>
@@ -153,149 +141,3 @@
     </div>
   </div>
 </div>
-
-{{-- Modal Geografis --}}
-<div class="modal fade" id="modal-form4" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="card card-plain">
-          <div class="card-header pb-0 text-left">
-            <h4 class="font-weight-bolder text-info text-gradient">Letak Geografis</h4>
-          </div>
-          <div class="card-body pt-0">
-            @if (($geografis) !=null)
-              <form role="form text-left" action="{{route('officer.edit_letak_geografis', $geografis->id)}}" method="POST">
-                @method('put')
-                @csrf
-                <label>Sebelah Utara</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_utara" id="sebelah_utara" class="form-control" value="{{$geografis->sebelah_utara}}">
-                </div>
-                <label>Sebelah Timur</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_timur" id="sebelah_timur" class="form-control" value="{{$geografis->sebelah_timur}}">
-                </div>
-                <label>Sebelah Barat</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_barat" id="sebelah_barat" class="form-control" value="{{$geografis->sebelah_barat}}">
-                </div>
-                <label>Sebelah Selatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_selatan" id="sebelah_selatan" class="form-control" value="{{$geografis->sebelah_selatan}}">
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                </div>
-              </form>
-            @else
-              <form role="form text-left" action="{{route('officer.letak_geografis')}}" method="POST">
-                @csrf
-                <label>Sebelah Utara</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_utara" id="sebelah_utara" class="form-control">
-                </div>
-                <label>Sebelah Timur</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_timur" id="sebelah_timur" class="form-control">
-                </div>
-                <label>Sebelah Barat</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_barat" id="sebelah_barat" class="form-control">
-                </div>
-                <label>Sebelah Selatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="sebelah_selatan" id="sebelah_selatan" class="form-control">
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                </div>
-              </form>
-            @endif
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- End Modal --}}
-{{-- Modal Orbitasi --}}
-<div class="modal fade" id="modal-form7" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="card card-plain">
-          <div class="card-header pb-0 text-left">
-            <h4 class="font-weight-bolder text-info text-gradient">Orbitasi</h4>
-          </div>
-          <div class="card-body pt-0">
-            @if (($orbitasi) != null)
-              <form role="form text-left" action="{{route('officer.edit_orbitasi', $orbitasi->id)}}" method="POST">
-                @csrf
-                <label>Jarak ke Kecamatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="jarak_ke_kecamatan" id="jarak_ke_kecamatan" class="form-control" value="{{$orbitasi->jarak_ke_kecamatan}}">
-                </div>
-                <label>Waktu ke Kecamatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="waktu_ke_kecamatan" id="waktu_ke_kecamatan" class="form-control" value="{{$orbitasi->waktu_ke_kecamatan}}">
-                </div>
-                <label>Kendaraan ke Kecamatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="kendaraan_ke_kecamatan" id="kendaraan_ke_kecamatan" class="form-control" value="{{$orbitasi->kendaraan_ke_kecamatan}}">
-                </div>
-                <label>Jarak ke Kabupaten</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="jarak_ke_kabupaten" id="jarak_ke_kabupaten" class="form-control" value="{{$orbitasi->jarak_ke_kabupaten}}">
-                </div>
-                <label>Waktu ke Kabupaten</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="waktu_ke_kabupaten" id="waktu_ke_kabupaten" class="form-control" value="{{$orbitasi->waktu_ke_kabupaten}}">
-                </div>
-                <label>Kendaraan ke Kabupaten</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="kendaraan_ke_kabupaten" id="kendaraan_ke_kabupaten" class="form-control" value="{{$orbitasi->kendaraan_ke_kabupaten}}">
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                </div>
-              </form>
-            @else
-              <form role="form text-left" action="{{route('officer.orbitasi')}}" method="POST">
-                @csrf
-                <label>Jarak ke Kecamatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="jarak_ke_kecamatan" id="jarak_ke_kecamatan" class="form-control" value="">
-                </div>
-                <label>Waktu ke Kecamatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="waktu_ke_kecamatan" id="waktu_ke_kecamatan" class="form-control" value="">
-                </div>
-                <label>Kendaraan ke Kecamatan</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="kendaraan_ke_kecamatan" id="kendaraan_ke_kecamatan" class="form-control" value="">
-                </div>
-                <label>Jarak ke Kabupaten</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="jarak_ke_kabupaten" id="jarak_ke_kabupaten" class="form-control" value="">
-                </div>
-                <label>Waktu ke Kabupaten</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="waktu_ke_kabupaten" id="waktu_ke_kabupaten" class="form-control" value="">
-                </div>
-                <label>Kendaraan ke Kabupaten</label>
-                <div class="input-group mb-3">
-                  <input type="text" name="kendaraan_ke_kabupaten" id="kendaraan_ke_kabupaten" class="form-control" value="">
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                </div>
-              </form>
-            @endif
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- End Modal --}}

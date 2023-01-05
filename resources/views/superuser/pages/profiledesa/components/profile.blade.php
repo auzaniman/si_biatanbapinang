@@ -16,10 +16,6 @@
           <div class="col-lg-12">
             <div class="d-flex justify-content-between">
               <i class="fa text-warning fa-history" aria-hidden="true"></i>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto">
-                <i class="fa fa-pencil me-1" aria-hidden="true"></i>
-                Edit
-              </button>
             </div>
             <h5 class="text-capitalize">Sejarah Kampung</h5>
             @if (($profil) != null)
@@ -81,10 +77,6 @@
       <div class="card-body pb-0 pt-3 bg-transparent">
         <div class="d-flex justify-content-between">
           <i class="fa text-warning fa-money" aria-hidden="true"></i>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form1" class="btn badge bg-gradient-primary ms-auto">
-            <i class="fa fa-pencil me-1" aria-hidden="true"></i>
-            Edit
-          </button>
         </div>
         <h5 class="text-capitalize">Kondisi Ekonomi</h5>
         @if (($profil) != null)
@@ -106,10 +98,6 @@
       <div class="card-body pb-0 pt-3 bg-transparent">
         <div class="d-flex justify-content-between">
           <i class="fa text-warning fa-envira" aria-hidden="true"></i>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
-            <i class="fa fa-pencil me-1" aria-hidden="true"></i>
-            Edit
-          </button>
         </div>
         <h5 class="text-capitalize">Kondisi Pemerintah Kampung</h5>
         @if (($profil) != null)
@@ -139,207 +127,3 @@
     </div>
   </div>
 </div>
-
-{{-- Modal Sejarah Kampung --}}
-<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="card card-plain">
-          <div class="card-header pb-0 text-left">
-            <h4 class="font-weight-bolder text-info text-gradient">Sejarah Kampung</h4>
-          </div>
-          <div class="card-body pt-0">
-            @if (($profil) != null)
-              @if ($profil->sejarah_kampung != null)
-                <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
-                  @method('put')
-                  @csrf
-                  <label>Gunakan tanda baca yang benar</label>
-                  <div class="mb-3">
-                    <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
-                  </div>
-                  <div class="text-end">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                  </div>
-                </form>
-              @else
-                <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
-                  @method('put')
-                  @csrf
-                  <label>Gunakan tanda baca yang benar</label>
-                  <div class="mb-3">
-                    <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
-                  </div>
-                  <div class="text-end">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                  </div>
-                </form>
-              @endif
-            @else
-              <form role="form text-left" action="{{route('officer.profile_kampung')}}" method="POST">
-                @csrf
-                <label>Gunakan tanda baca yang benar</label>
-                <div class="mb-3">
-                  <textarea class="summernote" name="sejarah_kampung"></textarea>
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                </div>
-              </form>
-            @endif
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- End Modal --}}
-
-{{-- Modal Kondisi Ekonomi --}}
-<div class="modal fade" id="modal-form1" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="card card-plain">
-          <div class="card-header pb-0 text-left">
-            <h4 class="font-weight-bolder text-info text-gradient">Kondisi Ekonomi</h4>
-          </div>
-          <div class="card-body pt-0">
-            @if (($profil) != null)
-              @if ($profil->kondisi_ekonomi != null)
-                <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
-                  @method('put')
-                  @csrf
-                  <label>Gunakan tanda baca yang benar</label>
-                  <div class="mb-3">
-                    <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
-                  </div>
-                  <div class="text-end">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                  </div>
-                </form>
-              @else
-                <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
-                  @method('put')
-                  @csrf
-                  <label>Gunakan tanda baca yang benar</label>
-                  <div class="mb-3">
-                    <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
-                  </div>
-                  <div class="text-end">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                  </div>
-                </form>
-              @endif
-            @else
-              <form role="form text-left" action="{{route('officer.profile_kampung')}}" method="POST">
-                @csrf
-                <label>Gunakan tanda baca yang benar</label>
-                <div class="mb-3">
-                  <textarea class="summernote" name="kondisi_ekonomi"></textarea>
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
-                </div>
-              </form>
-            @endif
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- End Modal --}}
-
-{{-- Modal Kondisi Pemerintah --}}
-<div class="modal fade" id="modal-form2" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <div class="card card-plain">
-          <div class="card-header pb-0 text-left">
-            <h4 class="font-weight-bolder text-info text-gradient">Kondisi Pemerintah Kampung</h4>
-          </div>
-          <div class="card-body pt-0">
-            @if (($profil) != null)
-              @if ($profil->kondisi_pemerintah != null)
-                <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
-                  @method('put')
-                  @csrf
-                  <label>Gunakan tanda baca yang benar</label>
-                  <div class="mb-3">
-                    <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
-                  </div>
-                  <div class="text-end">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                  </div>
-                </form>
-              @else
-                <form action="{{route('officer.edit_profile_kampung', $profil->id)}}" method="POST">
-                  @method('put')
-                  @csrf
-                  <label>Gunakan tanda baca yang benar</label>
-                  <div class="mb-3">
-                    <textarea class="summernote" name="kondisi_pemerintah">{{$profil->kondisi_pemerintah}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="sejarah_kampung">{{$profil->sejarah_kampung}}</textarea>
-                  </div>
-                  <div class="mb-3" hidden>
-                    <textarea class="summernote" name="kondisi_ekonomi">{{$profil->kondisi_ekonomi}}</textarea>
-                  </div>
-                  <div class="text-end">
-                    <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">update</button>
-                  </div>
-                </form>
-              @endif
-            @else
-              <form role="form text-left" action="{{route('officer.profile_kampung')}}" method="POST">
-                @csrf
-                <label>Gunakan tanda baca yang benar</label>
-                <div class="mb-3">
-                  <textarea class="summernote" name="kondisi_pemerintah"></textarea>
-                </div>
-                <div class="text-end">
-                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
-                </div>
-              </form>
-            @endif
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- End Modal --}}
