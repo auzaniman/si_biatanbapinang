@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\ChartBar;
 use App\Models\LetakGeografisModel;
+use App\Models\OrbitasiModel;
 use App\Models\ProfileKampungModel;
 use App\Models\SaranaPrasaranaModel;
 use App\Models\SettingModel;
@@ -18,9 +19,11 @@ class ProfileDesaController extends Controller
   public function index()
   {
     $profil = ProfileKampungModel::first();
-    $struktur = StrukturOrganisasiModel::all();
-    $geografis = LetakGeografisModel::select('batas_wilayah', 'keterangan_batas')->get();
-    $orbitasi = LetakGeografisModel::select('orbitasi', 'keterangan_orbitasi')->get();
+    $struktur = StrukturOrganisasiModel::all()->where('divisi', 'pengurus_pusat')->where('sub_divisi', 'Ketua Kampung');
+
+    $geografis = LetakGeografisModel::first();
+    $orbitasi = OrbitasiModel::first();
+
     $sarana_jalan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'akses');
     $sarana_kesehatan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'kesehatan');
     $sarana_pendidikan = SaranaPrasaranaModel::all()->where('jenis_fasilitas', 'pendidikan');
