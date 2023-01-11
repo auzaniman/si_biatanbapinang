@@ -10,15 +10,16 @@ class StrukturOrganisasiUserController extends Controller
 {
   public function index()
   {
+    $struktur = StrukturOrganisasiModel::all();
     $pusat = StrukturOrganisasiModel::all()->where('divisi', 'pengurus_pusat');
     $rt = StrukturOrganisasiModel::all()->where('divisi', 'ketua_rt');
     $bpk = StrukturOrganisasiModel::all()->where('divisi', 'bpk');
     $lpm = StrukturOrganisasiModel::all()->where('divisi', 'lpm');
     $pkk = StrukturOrganisasiModel::all()->where('divisi', 'pkk');
     $posyandu = StrukturOrganisasiModel::all()->where('divisi', 'posyandu');
-    $kartar = StrukturOrganisasiModel::all()->where('divisi', 'karang_taruna');
-    $kelsawi = StrukturOrganisasiModel::all()->where('divisi', 'kelompok_sadar_wisata');
+    $karang_taruna = StrukturOrganisasiModel::all()->where('divisi', 'karang_taruna');
+    $kelompok_sadar_wisata = StrukturOrganisasiModel::all()->where('divisi', 'kelompok_sadar_wisata');
 
-    return view('superuser.pages.strukturorganisasi', compact('pusat','rt','bpk','lpm','pkk','posyandu','kartar','kelsawi'));
+    return view('superuser.pages.strukturorganisasi', compact('struktur','pusat','rt','bpk','lpm','pkk','posyandu','karang_taruna','kelompok_sadar_wisata'));
   }
 }

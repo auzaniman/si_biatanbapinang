@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\TantanganPotensiModel;
 use Illuminate\Http\Request;
 
 class TantanganDanPotensiController extends Controller
@@ -12,9 +13,11 @@ class TantanganDanPotensiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('superuser.pages.tantangandanpotensi');
+      $data = TantanganPotensiModel::all();
+
+    return view('superuser.pages.tantangandanpotensi', compact('data'))->with('i', ($request->input('page', 1) - 1) * 20);
     }
 
     /**

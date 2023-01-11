@@ -4,6 +4,8 @@
   @include('officer.components.meta')
   @include('officer.components.style')
   @stack('style_ol')
+  @stack('style_tdp')
+  @stack('style_rjm')
   <title>
   @yield('title')
   </title>

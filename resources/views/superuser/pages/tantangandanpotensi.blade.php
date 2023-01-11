@@ -8,7 +8,7 @@ Potensi Tantangan
 <div class="row">
   <div class="col-lg-12 mb-lg-0 mb-4">
     <div class="card h-100">
-      <div class="card-header bg-transparent p-0 mx-4 mt-3">
+      <div class="card-header d-flex bg-transparent p-0 mx-4 mt-3">
         <h6 class="text-uppercase font-weight-bold">Tantangan dan Potensi Kampung Biatan Bapinang</h6>
       </div>
       <div class="card-body py-0">
@@ -16,13 +16,26 @@ Potensi Tantangan
           <table class="table">
             <tbody>
               <tr><td class="text-center text-sm font-weight-bold table-warning" colspan="3">Urusan Wajib</td></tr>
-              <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">A. Pendidikan</td></tr>
               <tr>
                 <td class="font-weight-bold text-sm">No</td>
                 <td class="font-weight-bold text-sm text-center text-danger">Tantangan</td>
                 <td class="font-weight-bold text-sm text-center text-success">Potensi</td>
               </tr>
 
+              {{-- Pendidikan --}}
+              <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">A. Pendidikan</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'pendidikan')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
+
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Tidak ada perumahan guru SDN dan SMP</td>
@@ -44,8 +57,20 @@ Potensi Tantangan
                 <td class="text-sm">Batu, tenaga pekerja, tukang batu, <br> kayu, lahan perumahan</td>
               </tr>
 
+              {{-- Kesehatan --}}
               <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">B. Kesehatan</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'kesehatan')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Bangunan posyandu sudah tua</td>
@@ -57,8 +82,20 @@ Potensi Tantangan
                 <td class="text-sm">Batu, tenaga pekerja, tukang batu, <br> kayu, lahan perumahan</td>
               </tr>
 
+              {{-- Sarana --}}
               <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">C. Sarana & Prasarana</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'sarana')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Belum ada badan jalan di Gunung Puliu RT.03</td>
@@ -180,8 +217,20 @@ Potensi Tantangan
                 <td class="text-sm"></td>
               </tr>
 
+              {{-- Sosial --}}
               <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">D. Sosial Budaya</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'sosial')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Lapangan volley ball di RT.01 <br> belum di semenisasi becek <br> pada saat hujan</td>
@@ -203,8 +252,20 @@ Potensi Tantangan
                 <td class="text-sm">Batu,tukang, kayu, tenaga pekerja</td>
               </tr>
 
+              {{-- Rohani --}}
               <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">E. Kerohanian</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'kerohanian')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Tidak ada ustadzah untuk pembina majelis ta'lim</td>
@@ -236,8 +297,20 @@ Potensi Tantangan
                 <td class="text-sm">Batu, tukang, kayu, tenaga pekerja, lokasi lahan</td>
               </tr>
 
+              {{-- Koperasi --}}
               <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">F. Koperasi & Usaha Masyarakat</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'koperasi')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Kurangnya pembinaan bagi usaha kecil masyarakat <br> dibidang kursus elektornik</td>
@@ -284,8 +357,20 @@ Potensi Tantangan
                 <td class="text-sm">Area wisata sudah ada <br> Sinyal Telkomsel pendukung media sosial sudah ada <br> Calon pengelola sudah ada (Kelompok Sadar Wisata <br> Biatan Bapinang, hasil program Kampung <br> Sigap Sawit YKAN - YP2SU</td>
               </tr>
 
+              {{-- Pemerintah --}}
               <tr><td class="text-center text-sm font-weight-bold table-success" colspan="3">G. Pemerintahan</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'pemerintah')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Tidak ada balai peretemuan umum di RT.03</td>
@@ -363,12 +448,24 @@ Potensi Tantangan
               </tr>
 
               <tr><td class="text-center text-sm font-weight-bold table-warning" colspan="3">Urusan Pilihan</td></tr>
-              <tr><td class="text-center text-sm font-weight-bold table-info" colspan="3">A. Pertanian</td></tr>
               <tr>
                 <td class="font-weight-bold text-sm">No</td>
                 <td class="font-weight-bold text-sm text-center text-danger">Tantangan</td>
                 <td class="font-weight-bold text-sm text-center text-success">Potensi</td>
               </tr>
+
+              {{-- Pertanian --}}
+              <tr><td class="text-center text-sm font-weight-bold table-info" colspan="3">A. Pertanian</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'pertanian')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
               <tr>
                 <td class="text-sm">1</td>
@@ -531,7 +628,18 @@ Potensi Tantangan
                 <td class="text-sm">Gapoktan, lahan perkebunan</td>
               </tr>
 
+              {{-- Peternakan --}}
               <tr><td class="text-center text-sm font-weight-bold table-info" colspan="3">B. Peternakan</td></tr>
+              @forelse ($data as $item)
+                @if ($item->sub_kategori == 'peternakan')
+                  <tr>
+                    <td class="text-sm">{{++$i}}</td>
+                    <td class="text-sm ">{{$item->potensi}}</td>
+                    <td class="text-sm">{{$item->tantangan}}</td>
+                  </tr>
+                @endif
+              @empty
+              @endforelse
 
               <tr>
                 <td class="text-sm">1</td>

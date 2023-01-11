@@ -33,6 +33,13 @@ class ProfileDesaOfficerController extends Controller
     );
   }
 
+  public function showEditSarana($id)
+  {
+    $data = SaranaPrasaranaModel::findOrFail($id);
+
+    return view('officer.pages.profiledesa.edit_sarana', compact('data'));
+  }
+
   public function storeProfileKampung(Request $request)
   {
     $data = new ProfileKampungModel();
@@ -46,24 +53,6 @@ class ProfileDesaOfficerController extends Controller
     return redirect()->back()->with([
       'message' => 'Profil Kampung berhasil Diubah',
       'status' => 'Profil Kampung berhasil Diubah'
-    ]);
-  }
-
-  public function storeStrukturOrganisasi(Request $request)
-  {
-    $data = new StrukturOrganisasiModel();
-
-    $data->tahun_kepengurusan = $request->tahun_kepengurusan;
-    $data->divisi = $request->divisi;
-    $data->divisi_baru = $request->divisi_baru;
-    $data->sub_divisi = $request->sub_divisi;
-    $data->nama_anggota = $request->nama_anggota;
-
-    $data->save();
-
-    return redirect()->back()->with([
-      'message' => 'Struktur Organisasi berhasil Diubah',
-      'status' => 'Struktur Organisasi berhasil Diubah'
     ]);
   }
 
@@ -132,24 +121,6 @@ class ProfileDesaOfficerController extends Controller
     return redirect()->back()->with([
       'message' => 'Profil Kampung berhasil Diubah',
       'status' => 'Profil Kampung berhasil Diubah'
-    ]);
-  }
-
-  public function updateStrukturOrganisasi(Request $request, $id)
-  {
-    $data = StrukturOrganisasiModel::findOrFail($id);
-
-    $data->tahun_kepengurusan = $request->tahun_kepengurusan;
-    $data->divisi = $request->divisi;
-    $data->divisi_baru = $request->divisi_baru;
-    $data->sub_divisi = $request->sub_divisi;
-    $data->nama_anggota = $request->nama_anggota;
-
-    $data->save();
-
-    return redirect()->back()->with([
-      'message' => 'Struktur Organisasi berhasil Diubah',
-      'status' => 'Struktur Organisasi berhasil Diubah'
     ]);
   }
 

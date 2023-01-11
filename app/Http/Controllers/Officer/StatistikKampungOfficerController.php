@@ -11,6 +11,11 @@ class StatistikKampungOfficerController extends Controller
 {
   public function index()
   {
+    return view('officer.pages.statistik.statistikkampung');
+  }
+
+  public function indexRegist()
+  {
     $charts = ChartBar::all();
 
     $total_kk = User::distinct()->count('kk');
@@ -55,10 +60,7 @@ class StatistikKampungOfficerController extends Controller
       $jmlkepala[] = $row->jumlahKepalaKeluarga;
     }
 
-    return
-    view('officer.pages.statistikkampung',
-      compact('rt','total_warga','total_kk','kelamin','sd','smp','sma','d1','d2','d3','d4','s1','s2','s3','jmlwarga','jmlkepala')
-    );
+    return view('officer.pages.statistik.statistikbyregister', compact('rt','total_warga','total_kk','kelamin','sd','smp','sma','d1','d2','d3','d4','s1','s2','s3','jmlwarga','jmlkepala'));
   }
 
   public function store(Request $request)

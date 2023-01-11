@@ -1,7 +1,7 @@
-@extends('superuser.layouts.app')
+@extends('officer.layouts.app')
 
 @section('title')
-Rencana
+Rencana Jangka Menengah
 @endsection
 
 @section('content')
@@ -20,6 +20,24 @@ Rencana
         <i class="fa fa-eye text-warning" aria-hidden="true"></i>
         <div class="d-flex">
           <h6 class="text-capitalize text-primary">VISI</h6>
+          @if (($visi_misi) != null)
+            @if ($visi_misi->visi != null || $visi_misi->misi != null)
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-info ms-auto">
+              <i class="fa fa-pencil me-1" aria-hidden="true"></i>
+              Edit
+            </button>
+            @else
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto">
+              <i class="fa fa-plus me-1" aria-hidden="true"></i>
+              Tambah
+            </button>
+            @endif
+          @else
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto">
+              <i class="fa fa-plus me-1" aria-hidden="true"></i>
+              Tambah
+            </button>
+          @endif
         </div>
         @if (($visi_misi) != null)
           @if ($visi_misi->visi != null)
@@ -105,6 +123,10 @@ Rencana
         <i class="fa fa-star text-warning" aria-hidden="true"></i>
         <div class="card-header d-flex bg-transparent p-0">
           <h6>ARAH KEBIJAKAN PEMBANGUNAN KAMPUNG</h6>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
+            <i class="fa fa-plus me-1" aria-hidden="true"></i>
+            Tambah
+          </button>
         </div>
         <div class="card"></div>
         <p>
@@ -124,6 +146,10 @@ Rencana
       <div class="card-body pb-0 pt-3">
         <div class="card-header d-flex bg-transparent p-0">
           <h6>Strategi dan Kebijakan</h6>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form3" class="btn badge bg-gradient-primary ms-auto">
+            <i class="fa fa-plus me-1" aria-hidden="true"></i>
+            Tambah
+          </button>
         </div>
         <div class="table-responsive">
           <table class="table">
@@ -271,6 +297,17 @@ Rencana
         <i class="fa fa-star text-warning" aria-hidden="true"></i>
         <div class="card-header d-flex bg-transparent p-0">
           <h6>STRATEGI PENCAPAIAN</h6>
+          @if (($strategi_pencapaian) != null)
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form4" class="btn badge bg-gradient-info ms-auto">
+              <i class="fa fa-pencil me-1" aria-hidden="true"></i>
+              Edit
+            </button>
+          @else
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form4" class="btn badge bg-gradient-primary ms-auto">
+              <i class="fa fa-plus me-1" aria-hidden="true"></i>
+              Tambah
+            </button>
+          @endif
         </div>
         <div class="card"></div>
         @if (($strategi_pencapaian) != null)
@@ -287,6 +324,180 @@ Rencana
   </div>
 </div>
 {{-- End --}}
+
+{{-- Modal Visi Misi --}}
+<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card card-plain">
+          <div class="card-header pb-0 text-left">
+            <h4 class="font-weight-bolder text-info text-gradient">Visi Misi</h4>
+          </div>
+          <div class="card-body pt-0">
+            @if (($visi_misi) != null)
+              <form role="form text-left" action="{{route('officer.update_visi_misi', $visi_misi->id)}}" method="POST">
+                @method('put')
+                @csrf
+                <label>Visi</label>
+                <div class="mb-3">
+                  <textarea type="text" name="visi" id="visi" class="summernote" rows="5">
+                    {{$visi_misi->visi}}
+                  </textarea>
+                </div>
+                <label>Misi</label>
+                <div class="mb-3">
+                  <textarea type="text" name="misi" id="misi" class="summernote" rows="5">
+                    {{$visi_misi->misi}}
+                  </textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Ubah</button>
+                </div>
+              </form>
+            @else
+              <form role="form text-left" action="{{route('officer.post_visi_misi')}}" method="POST">
+                @csrf
+                <label>Visi</label>
+                <div class="mb-3">
+                  <textarea type="text" name="visi" id="visi" class="summernote" rows="5"></textarea>
+                </div>
+                <label>Misi</label>
+                <div class="mb-3">
+                  <textarea type="text" name="misi" id="misi" class="summernote" rows="5"></textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+                </div>
+              </form>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- End Modal --}}
+
+{{-- Modal Deskripsi Kebijakan --}}
+<div class="modal fade" id="modal-form2" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card card-plain">
+          <div class="card-header pb-0 text-left">
+            <h4 class="font-weight-bolder text-info text-gradient">Deskripsi</h4>
+          </div>
+          <div class="card-body pt-0">
+            @if (($deskripsi_kebijakan) != null)
+              <form role="form text-left" action="{{route('officer.update_deskripsi_kebijakan', $deskripsi_kebijakan->id)}}" method="POST">
+                @method('put')
+                @csrf
+                <label>Deskripsi</label>
+                <div class="mb-3">
+                  <textarea type="text" name="deskripsi" id="deskripsi" class="summernote" rows="5">
+                    {{$deskripsi_kebijakan->deskripsi}}
+                  </textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Update</button>
+                </div>
+              </form>
+            @else
+              <form role="form text-left" action="{{route('officer.post_deskripsi_kebijakan')}}" method="POST">
+                @csrf
+                <label>Deskripsi</label>
+                <div class="mb-3">
+                  <textarea type="text" name="deskripsi" id="deskripsi" class="summernote" rows="5"></textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+                </div>
+              </form>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- End Modal --}}
+
+{{-- Modal Arah Kebijakan --}}
+<div class="modal fade" id="modal-form3" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card card-plain">
+          <div class="card-header pb-0 text-left">
+            <h4 class="font-weight-bolder text-info text-gradient">Visi Misi</h4>
+          </div>
+          <div class="card-body pt-0">
+            <form role="form text-left" action="{{route('officer.post_arah_kebijakan')}}" method="POST">
+              @csrf
+              <label>Strategi</label>
+              <div class="mb-3">
+                <textarea type="text" name="strategi" id="strategi" class="summernote" rows="5"></textarea>
+              </div>
+              <label>Kebijakan</label>
+              <div class="mb-3">
+                <textarea type="text" name="kebijakan" id="kebijakan" class="summernote" rows="5"></textarea>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- End Modal --}}
+
+{{-- Modal Strategi Pencapaian --}}
+<div class="modal fade" id="modal-form4" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="card card-plain">
+          <div class="card-header pb-0 text-left">
+            <h4 class="font-weight-bolder text-info text-gradient">Strategi Pencapaian</h4>
+          </div>
+          <div class="card-body pt-0">
+            @if (($strategi_pencapaian) != null)
+              <form role="form text-left" action="{{route('officer.update_strategi_pencapaian', $strategi_pencapaian->id)}}" method="POST">
+                @method('put')
+                @csrf
+                <label>Strategi Pencapaian</label>
+                <div class="mb-3">
+                  <textarea type="text" name="pencapaian" id="pencapaian" class="summernote" rows="5">
+                    {{$strategi_pencapaian->pencapaian}}
+                  </textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Update</button>
+                </div>
+              </form>
+            @else
+              <form role="form text-left" action="{{route('officer.post_strategi_pencapaian')}}" method="POST">
+                @csrf
+                <label>Strategi Pencapaian</label>
+                <div class="mb-3">
+                  <textarea type="text" name="pencapaian" id="pencapaian" class="summernote" rows="5"></textarea>
+                </div>
+                <div class="text-end">
+                  <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
+                </div>
+              </form>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{-- End Modal --}}
 @endsection
 
 @push('style_rjm')

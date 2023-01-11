@@ -5,6 +5,12 @@ Statistik Kampung
 @endsection
 
 @section('content')
+<button class="btn badge bg-gradient-info">
+  <a href="{{route('officer.statistik_regist')}}" class="text-reset text-decoration-none">
+  Statistik by Data Register
+  </a>
+</button>
+
 {{-- Card Count --}}
 <div class="row mb-sm-4">
   <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">

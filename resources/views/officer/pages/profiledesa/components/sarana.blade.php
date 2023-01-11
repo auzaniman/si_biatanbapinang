@@ -23,52 +23,11 @@
                 <td>:</td>
                 <td class="ps-1">{{$item->jumlah_barang}}</td>
                 <td class="ps-2">
-                  <button type="button" class="btn badge bg-gradient-info mb-0" data-bs-toggle="modal" data-bs-target="#modal-form8">Edit</button>
+                  <button class="btn badge bg-gradient-info mb-0">
+                    <a href="{{route('officer.show_sarana', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
+                  </button>
                 </td>
               </tr>
-              {{-- Modal --}}
-              <div class="modal fade" id="modal-form8" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-                  <div class="modal-content">
-                    <div class="modal-body p-0">
-                      <div class="card card-plain">
-                        <div class="card-header pb-0 text-left">
-                          <h4 class="font-weight-bolder text-info text-gradient">Sarana Prasarana</h4>
-                        </div>
-                        <div class="card-body pt-0">
-                          <form role="form text-left" action="{{route('officer.edit_sarana_prasarana', $item->id)}}" method="POST">
-                            @method('put')
-                            @csrf
-                            <label>Jenis Fasilitas Sarana Prasarana</label>
-                            <div class="input-group mb-3">
-                              <select class="form-control me-3 @error('jenis_fasilitas') is-invalid @enderror" id="jenis_fasilitas" name="jenis_fasilitas">
-                                <option value="{{$item->jenis_fasilitas}}">{{$item->jenis_fasilitas}}</option>
-                                <option value="akses">Aksesbilitas/Jalan</option>
-                                <option value="pendidikan">Pendidikan</option>
-                                <option value="kesehatan">Kesehatan</option>
-                                <option value="pertanian_perternakan">Pertanian/Perternakan</option>
-                                <option value="fasilitas_umum">Fasilitas Umum</option>
-                              </select>
-                            </div>
-                            <label>Nama Barang</label>
-                            <div class="input-group mb-3">
-                              <input type="text" name="nama_barang" id="nama_barang" class="form-control" value="{{$item->nama_barang}}">
-                            </div>
-                            <label>Jumlah Barang</label>
-                            <div class="input-group mb-3">
-                              <input type="text" name="jumlah_barang" id="jumlah_barang" class="form-control" value="{{$item->jumlah_barang}}">
-                            </div>
-                            <div class="text-end">
-                              <button type="submit" class="btn btn-round bg-gradient-info btn-sm mb-0">Tambah</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {{-- End Modal --}}
             @empty
               <tr>
                 <td class="ps-2">• Panjang jalan poros</td>

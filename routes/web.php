@@ -79,14 +79,14 @@ Route::middleware(["officer"])
 
   // Profile Desa
   Route::get('/profiledesa', [ProfileDesaOfficerController::class, "index"])->name("profiledesa");
+  Route::get('/show_sarana/{id}', [ProfileDesaOfficerController::class, "showEditSarana"])->name("show_sarana");
+
   Route::post('/profile_kampung', [ProfileDesaOfficerController::class, "storeProfileKampung"])->name("profile_kampung");
-  Route::post('/struktur', [ProfileDesaOfficerController::class, "storeStrukturOrganisasi"])->name("struktur");
   Route::post('/letak_geografis', [ProfileDesaOfficerController::class, "storeLetakGeografis"])->name("letak_geografis");
   Route::post('/orbitasi', [ProfileDesaOfficerController::class, "storeOrbitasi"])->name("orbitasi");
   Route::post('/sarana_prasarana', [ProfileDesaOfficerController::class, "storeSaranaPrasarana"])->name("sarana_prasarana");
 
   Route::put('/edit_profile_kampung/{id}', [ProfileDesaOfficerController::class, "updateProfileKampung"])->name("edit_profile_kampung");
-  Route::put('/edit_struktur/{id}', [ProfileDesaOfficerController::class, "updateStrukturOrganisasi"])->name("edit_struktur");
   Route::put('/edit_letak_geografis/{id}', [ProfileDesaOfficerController::class, "updateLetakGeografis"])->name("edit_letak_geografis");
   Route::put('/edit_orbitasi/{id}', [ProfileDesaOfficerController::class, "updateOrbitasi"])->name("edit_orbitasi");
   Route::put('/edit_sarana_prasarana/{id}', [ProfileDesaOfficerController::class, "updateSaranaPrasarana"])->name("edit_sarana_prasarana");
@@ -98,15 +98,33 @@ Route::middleware(["officer"])
 
   // Statistik Kampung
   Route::get("/statistik", [StatistikKampungOfficerController::class, "Index"])->name("statistik");
+  Route::get("/statistikbyregist", [StatistikKampungOfficerController::class, "indexRegist"])->name("statistik_regist");
 
   // Struktur Organisasi Kampung
   Route::get("/struktur_organisasi", [StrukturOrganisasiController::class, "Index"])->name("struktur_organisasi");
+  Route::get("/show_struktur_organisasi/{id}", [StrukturOrganisasiController::class, "showEditStruktur"])->name("show_struktur_organisasi");
+  Route::post('/post_struktur', [StrukturOrganisasiController::class, "storeStrukturOrganisasi"])->name("struktur");
+  Route::put('/edit_struktur/{id}', [StrukturOrganisasiController::class, "updateStrukturOrganisasi"])->name("edit_struktur");
 
   // TDP
   Route::get("/tdp", [TantanganDanPotensiOfficerController::class, "Index"])->name("tantangan");
+  Route::get("/tdp_edit/{id}", [TantanganDanPotensiOfficerController::class, "show"])->name("show_tdp");
+  Route::post("/tdp_baru", [TantanganDanPotensiOfficerController::class, "store"])->name("post_tdp");
+  Route::put("/tdp_update/{id}", [TantanganDanPotensiOfficerController::class, "update"])->name("update_tdp");
 
   // RJM
   Route::get("/rjm", [RencanaJangkaMenengahOfficerController::class, "Index"])->name("rencana");
+  Route::get("/edit_page_strategi/{id}", [RencanaJangkaMenengahOfficerController::class, "show"])->name("edit_page_strategi");
+
+  Route::post("/post_visi_misi", [RencanaJangkaMenengahOfficerController::class, "storeVisiMisi"])->name("post_visi_misi");
+  Route::post("/post_arah_kebijakan", [RencanaJangkaMenengahOfficerController::class, "storeArahKebijakan"])->name("post_arah_kebijakan");
+  Route::post("/deskripsi_kebijakan", [RencanaJangkaMenengahOfficerController::class, "storeDeskripsiKebijakan"])->name("post_deskripsi_kebijakan");
+  Route::post("/strategi_pencapaian", [RencanaJangkaMenengahOfficerController::class, "storeStrategiPencapaian"])->name("post_strategi_pencapaian");
+
+  Route::put("/post_visi_misi/{id}", [RencanaJangkaMenengahOfficerController::class, "updateVisiMisi"])->name("update_visi_misi");
+  Route::put("/post_arah_kebijakan/{id}", [RencanaJangkaMenengahOfficerController::class, "updateArahKebijakan"])->name("update_arah_kebijakan");
+  Route::put("/deskripsi_kebijakan/{id}", [RencanaJangkaMenengahOfficerController::class, "updateDeskripsiKebijakan"])->name("update_deskripsi_kebijakan");
+  Route::put("/strategi_pencapaian/{id}", [RencanaJangkaMenengahOfficerController::class, "updateStrategiPencapaian"])->name("update_strategi_pencapaian");
 
   // Agenda
   Route::get("/agenda", [AgendaOfficerController::class, "Index"])->name("agenda");
