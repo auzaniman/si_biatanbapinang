@@ -231,6 +231,7 @@
           <div class="card-body pt-0">
             @if (($orbitasi) != null)
               <form role="form text-left" action="{{route('officer.edit_orbitasi', $orbitasi->id)}}" method="POST">
+                @method('put')
                 @csrf
                 <label>Jarak ke Kecamatan</label>
                 <div class="input-group mb-3">
