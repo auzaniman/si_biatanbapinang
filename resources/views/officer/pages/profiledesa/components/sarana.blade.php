@@ -2,19 +2,17 @@
   <div class="card-body pt-3 bg-transparent">
     <div class="d-flex justify-content-between">
       <i class="fa text-warning fa-briefcase" aria-hidden="true"></i>
-      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form5" class="btn badge bg-gradient-primary ms-auto">
+      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form5" class="btn badge bg-gradient-primary ms-auto mb-0">
         <i class="fa fa-plus me-1" aria-hidden="true"></i>
         Tambah
       </button>
     </div>
     <h5>Sarana Prasarana Kampung</h5>
-    <div class="row mt-4">
+    <div class="row">
       <div class="col-lg-12 mb-lg-0">
         <div class="d-flex justify-content-between">
           <h6><i class="fa text-success fa-road me-2" aria-hidden="true"></i>Jalan</h6>
         </div>
-
-        <p>Jaringan jalan yang ada di Kampung Biatan Bapinang yaitu jalan pemukiman RT.01 dan 02 yang merupakan jalan poros Tanjung Redeb-Talisayan. Jalan pemukiman yang lebar dan dapat dilalui oleh mobil. Sedangkan jalan emukiman RT.03 merupakan jalan menuju wisata Air Panas. Pembangunan jalan Biata Bapinang fokus pada peningkatan jalan usaha tani, serta oenimbunan dengan pasir dan batu (sirtu)</p>
         <table class="table-borderless">
           <tbody>
             @forelse ($sarana_jalan as $item)

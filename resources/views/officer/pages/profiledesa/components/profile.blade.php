@@ -16,7 +16,7 @@
           <div class="col-lg-12">
             <div class="d-flex justify-content-between">
               <i class="fa text-warning fa-history" aria-hidden="true"></i>
-              <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto mb-0">
                 <i class="fa fa-pencil me-1" aria-hidden="true"></i>
                 Edit
               </button>
@@ -98,7 +98,7 @@
       <div class="card-body pb-0 pt-3 bg-transparent">
         <div class="d-flex justify-content-between">
           <i class="fa text-warning fa-money" aria-hidden="true"></i>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form1" class="btn badge bg-gradient-primary ms-auto">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form1" class="btn badge bg-gradient-primary ms-auto mb-0">
             <i class="fa fa-pencil me-1" aria-hidden="true"></i>
             Edit
           </button>
@@ -123,7 +123,7 @@
       <div class="card-body pb-0 pt-3 bg-transparent">
         <div class="d-flex justify-content-between">
           <i class="fa text-warning fa-envira" aria-hidden="true"></i>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto mb-0">
             <i class="fa fa-pencil me-1" aria-hidden="true"></i>
             Edit
           </button>

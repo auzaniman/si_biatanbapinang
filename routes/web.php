@@ -91,6 +91,10 @@ Route::middleware(["officer"])
   Route::put('/edit_orbitasi/{id}', [ProfileDesaOfficerController::class, "updateOrbitasi"])->name("edit_orbitasi");
   Route::put('/edit_sarana_prasarana/{id}', [ProfileDesaOfficerController::class, "updateSaranaPrasarana"])->name("edit_sarana_prasarana");
 
+  Route::delete('/delete_sarana/{id}', [ProfileDesaOfficerController::class, "destroySarana"])->name("delete_sarana");
+  Route::delete('/delete_orbitasi/{id}', [ProfileDesaOfficerController::class, "destroyOrbitasi"])->name("delete_sarana");
+  Route::delete('/delete_geografis/{id}', [ProfileDesaOfficerController::class, "destroyGeografis"])->name("delete_geografis");
+
   Route::post('/chart_add', [ProfileDesaOfficerController::class, "store"])->name("chart_add");
   Route::get('/chart_edit_page', [ProfileDesaOfficerController::class, "index_edit"])->name("chart_edit_page");
   Route::put('/chart_edit/{id}', [ProfileDesaOfficerController::class, "update"])->name("chart_edit");
@@ -105,6 +109,7 @@ Route::middleware(["officer"])
   Route::get("/show_struktur_organisasi/{id}", [StrukturOrganisasiController::class, "showEditStruktur"])->name("show_struktur_organisasi");
   Route::post('/post_struktur', [StrukturOrganisasiController::class, "storeStrukturOrganisasi"])->name("struktur");
   Route::put('/edit_struktur/{id}', [StrukturOrganisasiController::class, "updateStrukturOrganisasi"])->name("edit_struktur");
+  Route::delete('/delete_struktur/{id}', [StrukturOrganisasiController::class, "destroyStruktur"])->name("delete_struktur");
 
   // TDP
   Route::get("/tdp", [TantanganDanPotensiOfficerController::class, "Index"])->name("tantangan");

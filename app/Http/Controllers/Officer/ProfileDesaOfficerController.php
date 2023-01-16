@@ -174,4 +174,40 @@ class ProfileDesaOfficerController extends Controller
       'status' => 'Sarana Prasarana berhasil Diubah'
     ]);
   }
+
+  public function destroySarana($id)
+  {
+    $data = SaranaPrasaranaModel::findOrFail($id);
+    $data->delete();
+
+    return redirect()->back()
+    ->with([
+      'message' => 'berhasil dihapus',
+      'status' => 'Berhasil dihapus'
+    ]);
+  }
+
+  public function destroyOrbitasi($id)
+  {
+    $data = OrbitasiModel::findOrFail($id);
+    $data->delete();
+
+    return redirect()->back()
+    ->with([
+      'message' => 'berhasil dihapus',
+      'status' => 'Berhasil dihapus'
+    ]);
+  }
+
+  public function destroyGeografis($id)
+  {
+    $data = LetakGeografisModel::findOrFail($id);
+    $data->delete();
+
+    return redirect()->back()
+    ->with([
+      'message' => 'berhasil dihapus',
+      'status' => 'Berhasil dihapus'
+    ]);
+  }
 }

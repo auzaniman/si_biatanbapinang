@@ -65,4 +65,16 @@ class StrukturOrganisasiController extends Controller
       'status' => 'Struktur Organisasi berhasil Diubah'
     ]);
   }
+
+  public function destroyStruktur($id)
+  {
+    $data = StrukturOrganisasiModel::findOrFail($id);
+    $data->delete();
+
+    return redirect()->back()
+    ->with([
+      'message' => 'berhasil dihapus',
+      'status' => 'Berhasil dihapus'
+    ]);
+  }
 }

@@ -6,7 +6,6 @@
           <i class="fa text-warning fa-map-marker" aria-hidden="true"></i>
         </div>
         <h5 class="text-capitalize">Letak Geografis</h5>
-        <p>Kampung   Biatan   Bapinang   merupakansatu diantara  delapan Kampung di Kecamatan Biatan Kabupaten Berau Propinsi Kalimantan Timur. </p>
         <div class="row">
           <div class="col-lg-5 mb-lg-0 mb-4">
             <ol class="ps-3">
