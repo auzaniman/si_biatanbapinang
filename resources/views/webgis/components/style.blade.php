@@ -20,6 +20,36 @@
 <link rel="stylesheet" href="{{url('webgis/resources/fontawesome-all.min.css')}}">
 <link rel="stylesheet" href="{{url('webgis/resources/ol-layerswitcher.css')}}">
 <link rel="stylesheet" href="{{url('webgis/resources/qgis2web.css')}}">
+
+<style>
+  .ol-geocoder.gcd-gl-container {
+      top: 65px!important;
+      left: .5em!important;
+      width: 2.1em!important;
+      height: 2.1em!important;
+  }
+  .ol-geocoder .gcd-gl-container{
+      width: 2.1em!important;
+      height: 2.1em!important;
+  }
+  .ol-geocoder .gcd-gl-control{
+      width: 2.1em!important;
+  }
+  .ol-geocoder .gcd-gl-expanded {
+      width: 15.625em!important;
+      height: 2.1875em;
+  }
+  .ol-touch .ol-geocoder.gcd-gl-container{
+      top: 80px!important;
+  }
+  .ol-geocoder .gcd-gl-btn {
+      width: 1.375em!important;
+      height: 1.375em!important;
+      top: .225em!important;
+      background-image: none!important;
+  }
+</style>
+
 <style>
   .search-layer {
     top: 100px;
@@ -110,7 +140,7 @@
     margin: 0;
   }
 </style>
-
+<link href="{{url('webgis/resources/ol-geocoder.min.css')}}" rel="stylesheet">
 <style>
   @media (min-width: 992px) {
 
