@@ -107,6 +107,9 @@ Rencana
           <h6>ARAH KEBIJAKAN PEMBANGUNAN KAMPUNG</h6>
         </div>
         <div class="card"></div>
+        @if (($deskripsi_kebijakan) != null)
+          {!! html_entity_decode($deskripsi_kebijakan->pencapaian) !!}
+        @else
         <p>
           Dalam rangka mewujudkan pencapaian Visi dan Misi Kampung Biatan Bapinang di tahun 2018-2023 maka arah kebijakan pembangunan Kampung diprioritaskan pada bidang kepentingan masyarakat miskin.
           <br>
@@ -114,6 +117,7 @@ Rencana
           <br>
           Untuk mencapai tujuan dan sasaran pembanguan yang telah dirumuskan, maka pemerintah kampung menempuh strategi dan kebijakan sebagai berikut :
         </p>
+        @endif
       </div>
     </div>
   </div>
@@ -131,7 +135,6 @@ Rencana
               <th class="font-weight-bold text-sm">No</th>
               <th class="font-weight-bold text-sm text-center text-danger">Strategi</th>
               <th class="font-weight-bold text-sm text-center text-success">Kebijakan</th>
-              <th class="font-weight-bold text-sm text-center">Aksi</th>
             </thead>
             <tbody>
 
@@ -140,16 +143,11 @@ Rencana
                   <td class="text-sm">{{++$i}}</td>
                   <td class="text-sm ">{!! html_entity_decode($item->strategi) !!}</td>
                   <td class="text-sm">{!! html_entity_decode($item->kebijakan) !!}</td>
-                  <td class="text-sm">
-                    <button class="btn badge bg-gradient-info">
-                      <a href="{{route('officer.edit_page_strategi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
-                    </button>
-                  </td>
                 </tr>
               @empty
               @endforelse
 
-              <tr><td colspan="4" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
+              <tr><td colspan="3" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Kekurangan dan dalam pembebasan lahan perpustakaan</td>
