@@ -59,8 +59,15 @@ class TantanganDanPotensiOfficerController extends Controller
     ]);
   }
 
-  public function destroy($id)
+  public function destroyTDP($id)
   {
-      //
+    $data = TantanganPotensiModel::findOrFail($id);
+    $data->delete();
+
+    return redirect()->back()
+    ->with([
+      'message' => 'berhasil dihapus',
+      'status' => 'Berhasil dihapus'
+    ]);
   }
 }

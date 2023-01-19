@@ -136,18 +136,51 @@ class RencanaJangkaMenengahOfficerController extends Controller
      ]);
     }
 
-    public function edit($id)
+    public function destroyVisiMisi($id)
     {
-        //
+      $data = VisiMisiModel::findOrFail($id);
+      $data->delete();
+
+      return redirect()->back()
+      ->with([
+        'message' => 'berhasil dihapus',
+        'status' => 'Berhasil dihapus'
+      ]);
     }
 
-    public function update(Request $request, $id)
+    public function destroyArahKebijakan($id)
     {
-        //
+      $data = ArahKebijakanStrategisModel::findOrFail($id);
+      $data->delete();
+
+      return redirect()->back()
+      ->with([
+        'message' => 'berhasil dihapus',
+        'status' => 'Berhasil dihapus'
+      ]);
     }
 
-    public function destroy($id)
+    public function destroyDeskripsiKebijakan($id)
     {
-        //
+      $data = DeskripsiKebijakanModel::findOrFail($id);
+      $data->delete();
+
+      return redirect()->back()
+      ->with([
+        'message' => 'berhasil dihapus',
+        'status' => 'Berhasil dihapus'
+      ]);
+    }
+
+    public function destroyStrategiPencapaian($id)
+    {
+      $data = StrategiPencapaianModel::findOrFail($id);
+      $data->delete();
+
+      return redirect()->back()
+      ->with([
+        'message' => 'berhasil dihapus',
+        'status' => 'Berhasil dihapus'
+      ]);
     }
 }

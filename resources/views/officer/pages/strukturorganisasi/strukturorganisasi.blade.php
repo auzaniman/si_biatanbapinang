@@ -91,6 +91,13 @@ Struktur Kampung
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
                     </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('officer.delete_struktur', $item->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
+                    </td>
                   </tr>
                 @else
                 <tr>
@@ -161,6 +168,13 @@ Struktur Kampung
                       <button class="btn badge bg-gradient-info mb-0">
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
+                    </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
                     </td>
                   </tr>
                 @else
@@ -242,6 +256,13 @@ Struktur Kampung
                       <button class="btn badge bg-gradient-info mb-0">
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
+                    </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
                     </td>
                   </tr>
                 @else
@@ -376,6 +397,13 @@ Struktur Kampung
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
                     </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
+                    </td>
                   </tr>
                 @else
                 <tr>
@@ -472,6 +500,13 @@ Struktur Kampung
                       <button class="btn badge bg-gradient-info mb-0">
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
+                    </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
                     </td>
                   </tr>
                 @else
@@ -573,6 +608,13 @@ Struktur Kampung
                       <button class="btn badge bg-gradient-info mb-0">
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
+                    </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
                     </td>
                   </tr>
                 @else
@@ -691,6 +733,13 @@ Struktur Kampung
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
                     </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
+                    </td>
                   </tr>
                 @else
                 <tr>
@@ -743,6 +792,13 @@ Struktur Kampung
                       <button class="btn badge bg-gradient-info mb-0">
                         <a href="{{route('officer.show_struktur_organisasi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                       </button>
+                    </td>
+                    <td class="align-middle text-sm">
+                      <form action="{{route('delete_struktur', $data->id)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                      </form>
                     </td>
                   </tr>
                 @else

@@ -16,6 +16,15 @@
                     <i class="fa fa-plus me-1" aria-hidden="true"></i>
                     Edit
                   </button>
+                  @if (($geografis) != null)
+                    <form action="{{route('officer.delete_geografis', $geografis->id)}}" method="POST">
+                      @method('delete')
+                      @csrf
+                      <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                    </form>
+                  @else
+
+                  @endif
                 </div>
               </div>
               <table class="table-borderless">
@@ -76,6 +85,15 @@
                     <i class="fa fa-plus me-1" aria-hidden="true"></i>
                     Edit
                   </button>
+                  @if (($orbitasi) != null)
+                    <form action="{{route('officer.delete_orbitasi', $orbitasi->id)}}" method="POST">
+                      @method('delete')
+                      @csrf
+                      <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                    </form>
+                  @else
+
+                  @endif
                 </div>
               </div>
               <table class="table-borderless">

@@ -26,6 +26,11 @@ Rencana Jangka Menengah
               <i class="fa fa-pencil me-1" aria-hidden="true"></i>
               Edit
             </button>
+            <form action="{{route('officer.delete_visimisi', $visi_misi->id)}}" method="POST">
+              @method('delete')
+              @csrf
+              <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+            </form>
             @else
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form" class="btn badge bg-gradient-primary ms-auto">
               <i class="fa fa-plus me-1" aria-hidden="true"></i>
@@ -123,10 +128,24 @@ Rencana Jangka Menengah
         <i class="fa fa-star text-warning" aria-hidden="true"></i>
         <div class="card-header d-flex bg-transparent p-0">
           <h6>ARAH KEBIJAKAN PEMBANGUNAN KAMPUNG</h6>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
-            <i class="fa fa-plus me-1" aria-hidden="true"></i>
-            Tambah
-          </button>
+
+          @if (($deskripsi_kebijakan) != null)
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
+              <i class="fa fa-plus me-1" aria-hidden="true"></i>
+              Edit
+            </button>
+            <form action="{{route('officer.delete_deskripsi_kebijakan', $data->id)}}" method="POST">
+              @method('delete')
+              @csrf
+              <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+            </form>
+          @else
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
+              <i class="fa fa-plus me-1" aria-hidden="true"></i>
+              Tambah
+            </button>
+          @endif
+
         </div>
         <div class="card"></div>
         <p>
@@ -158,6 +177,7 @@ Rencana Jangka Menengah
               <th class="font-weight-bold text-sm text-center text-danger">Strategi</th>
               <th class="font-weight-bold text-sm text-center text-success">Kebijakan</th>
               <th class="font-weight-bold text-sm text-center">Aksi</th>
+              <th class="font-weight-bold text-sm text-center">Hapus</th>
             </thead>
             <tbody>
 
@@ -171,11 +191,18 @@ Rencana Jangka Menengah
                       <a href="{{route('officer.edit_page_strategi', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                     </button>
                   </td>
+                  <td class="text-sm">
+                    <form action="{{route('officer.delete_arah_kebijakan', $item->id)}}" method="POST">
+                      @method('delete')
+                      @csrf
+                      <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                    </form>
+                  </td>
                 </tr>
               @empty
               @endforelse
 
-              <tr><td colspan="4" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
+              <tr><td colspan="5" class="text-center font-weight-bold table-primary text-sm">Data Dokumen</td></tr>
               <tr>
                 <td class="text-sm">1</td>
                 <td class="text-sm ">Kekurangan dan dalam pembebasan lahan perpustakaan</td>
@@ -302,6 +329,11 @@ Rencana Jangka Menengah
               <i class="fa fa-pencil me-1" aria-hidden="true"></i>
               Edit
             </button>
+            <form action="{{route('officer.delete_strategi_pencapaian', $strategi_pencapaian->id)}}" method="POST">
+              @method('delete')
+              @csrf
+              <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+            </form>
           @else
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form4" class="btn badge bg-gradient-primary ms-auto">
               <i class="fa fa-plus me-1" aria-hidden="true"></i>

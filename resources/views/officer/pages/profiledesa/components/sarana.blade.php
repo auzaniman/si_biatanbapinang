@@ -25,6 +25,13 @@
                     <a href="{{route('officer.show_sarana', $item->id)}}" class="text-reset text-decoration-none">Edit</a>
                   </button>
                 </td>
+                <td class="ps-2">
+                  <form action="{{route('officer.delete_sarana', $item->id)}}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+                  </form>
+                </td>
               </tr>
             @empty
               <tr>

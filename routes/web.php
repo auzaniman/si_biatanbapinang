@@ -92,7 +92,7 @@ Route::middleware(["officer"])
   Route::put('/edit_sarana_prasarana/{id}', [ProfileDesaOfficerController::class, "updateSaranaPrasarana"])->name("edit_sarana_prasarana");
 
   Route::delete('/delete_sarana/{id}', [ProfileDesaOfficerController::class, "destroySarana"])->name("delete_sarana");
-  Route::delete('/delete_orbitasi/{id}', [ProfileDesaOfficerController::class, "destroyOrbitasi"])->name("delete_sarana");
+  Route::delete('/delete_orbitasi/{id}', [ProfileDesaOfficerController::class, "destroyOrbitasi"])->name("delete_orbitasi");
   Route::delete('/delete_geografis/{id}', [ProfileDesaOfficerController::class, "destroyGeografis"])->name("delete_geografis");
 
   Route::post('/chart_add', [ProfileDesaOfficerController::class, "store"])->name("chart_add");
@@ -116,6 +116,7 @@ Route::middleware(["officer"])
   Route::get("/tdp_edit/{id}", [TantanganDanPotensiOfficerController::class, "show"])->name("show_tdp");
   Route::post("/tdp_baru", [TantanganDanPotensiOfficerController::class, "store"])->name("post_tdp");
   Route::put("/tdp_update/{id}", [TantanganDanPotensiOfficerController::class, "update"])->name("update_tdp");
+  Route::delete('/delete_tdp/{id}', [TantanganDanPotensiOfficerController::class, "destroyTDP"])->name("delete_tdp");
 
   // RJM
   Route::get("/rjm", [RencanaJangkaMenengahOfficerController::class, "Index"])->name("rencana");
@@ -130,6 +131,11 @@ Route::middleware(["officer"])
   Route::put("/post_arah_kebijakan/{id}", [RencanaJangkaMenengahOfficerController::class, "updateArahKebijakan"])->name("update_arah_kebijakan");
   Route::put("/deskripsi_kebijakan/{id}", [RencanaJangkaMenengahOfficerController::class, "updateDeskripsiKebijakan"])->name("update_deskripsi_kebijakan");
   Route::put("/strategi_pencapaian/{id}", [RencanaJangkaMenengahOfficerController::class, "updateStrategiPencapaian"])->name("update_strategi_pencapaian");
+
+  Route::delete('/delete_visimisi/{id}', [RencanaJangkaMenengahOfficerController::class, "destroyVisiMisi"])->name("delete_visimisi");
+  Route::delete('/delete_arah_kebijakan/{id}', [RencanaJangkaMenengahOfficerController::class, "destroyArahKebijakan"])->name("delete_arah_kebijakan");
+  Route::delete('/delete_deskripsi_kebijakan/{id}', [RencanaJangkaMenengahOfficerController::class, "destroyDeskripsiKebijakan"])->name("delete_deskripsi_kebijakan");
+  Route::delete('/delete_strategi_pencapaian/{id}', [RencanaJangkaMenengahOfficerController::class, "destroyStrategiPencapaian"])->name("delete_strategi_pencapaian");
 
   // Agenda
   Route::get("/agenda", [AgendaOfficerController::class, "Index"])->name("agenda");
