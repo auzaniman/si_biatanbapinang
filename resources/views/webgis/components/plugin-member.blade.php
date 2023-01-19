@@ -19,7 +19,7 @@
       <div class="mt-lg-0 mt-3">
         <a href="{{route('dashboard')}}" class="mb-0 font-weight-bold @if (\Request::is('user')) active @endif">
           <i class="ni ni-app  text-primary text-sm me-1"></i>
-           Back
+           Kembali
         </a>
       </div>
       <hr class="horizontal dark my-sm-4">
