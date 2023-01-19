@@ -134,10 +134,10 @@ Rencana Jangka Menengah
               <i class="fa fa-plus me-1" aria-hidden="true"></i>
               Edit
             </button>
-            <form action="{{route('officer.delete_deskripsi_kebijakan', $data->id)}}" method="POST">
+            <form action="{{route('officer.delete_deskripsi_kebijakan', $deskripsi_kebijakan->id)}}" method="POST">
               @method('delete')
               @csrf
-              <button type="submit" class="btn badge bg-gradient-danger mb-0">Hapus</button>
+              <button type="submit" class="btn badge bg-gradient-danger">Hapus</button>
             </form>
           @else
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-form2" class="btn badge bg-gradient-primary ms-auto">
@@ -148,6 +148,9 @@ Rencana Jangka Menengah
 
         </div>
         <div class="card"></div>
+        @if (($deskripsi_kebijakan) != null)
+          {!! html_entity_decode($deskripsi_kebijakan->deskripsi) !!}
+        @else
         <p>
           Dalam rangka mewujudkan pencapaian Visi dan Misi Kampung Biatan Bapinang di tahun 2018-2023 maka arah kebijakan pembangunan Kampung diprioritaskan pada bidang kepentingan masyarakat miskin.
           <br>
@@ -155,10 +158,13 @@ Rencana Jangka Menengah
           <br>
           Untuk mencapai tujuan dan sasaran pembanguan yang telah dirumuskan, maka pemerintah kampung menempuh strategi dan kebijakan sebagai berikut :
         </p>
+        @endif
       </div>
     </div>
   </div>
 </div>
+
+{{-- Table Strategi Kebijakan --}}
 <div class="row mt-4">
   <div class="col-12">
     <div class="card">
