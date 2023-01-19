@@ -140,7 +140,9 @@
     margin: 0;
   }
 </style>
+
 <link href="{{url('webgis/resources/ol-geocoder.min.css')}}" rel="stylesheet">
+
 <style>
   @media (min-width: 992px) {
 
@@ -153,8 +155,14 @@
       width: 73% !important;
       height: 85vh !important;
     }
+
+    #map canvas {
+      left: -12rem !important;
+      top: -3rem !important;
+    }
    }
 </style>
+
 
 <style>
   a span {
